@@ -1,14 +1,19 @@
 .login-page {
+    box-shadow: 0 0 15px #ddd;
     max-width: 500px;
-    border: 2px solid rgb(3, 165, 206);
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 30px;
     margin: 50px auto;
+    /* border: 2px solid silver; */
 }
 .login-page h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #555;
+    color: rgb(69, 66, 66);
+    margin-bottom: 30px;
+}
+.login-page form input {
+    text-indent: 15px;
 }
 .login-page form input,
 .login-page form button {
@@ -16,10 +21,13 @@
     height: 40px;
     margin: 10px 0;
     padding: 0 5px;
-    outline: rgb(3, 165, 206);
-    border: 1px solid rgb(3, 165, 206);
+    /* outline: rgb(3, 165, 206); */
+    box-shadow: 0 0 15px #ddd;
+    border-radius: 20px;
+    border: 0px solid;
 }
 .login-page form .row {
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +40,53 @@
     letter-spacing: 2px;
 }
 .login-page form a {
-    color: orange;
+    color: var(--color-blue);
     letter-spacing: 1.3px;
     text-transform: uppercase;
 }
+
+
+.login-page form button {
+    /* border: 0.5px solid var(--color-red); */
+    border: 0px solid;
+    text-transform: uppercase;
+    /* margin-top: 30px; */
+    /* width: 150px; */
+    /* height: 70px; */
+    border-radius: 20px;
+    /* border-radius: 12px; */
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.18);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    font-weight: 400;
+
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--color-red);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    background-color: #fff;
+}
+.login-page form button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-red);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.login-page form button:hover::before {
+    width: 100%;
+}
+.login-page form button:hover {
+    color: #fff;
+}
+

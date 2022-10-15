@@ -7,7 +7,6 @@ function UserAPI(token) {
     const [isAdmin, setIsAdmin] = useState(false)
     const [cart, setCart] = useState([])
     // const [history, setHistory] = useState([])
-
     
     useEffect(() =>{
         if(token){
@@ -28,7 +27,6 @@ function UserAPI(token) {
             }
 
             getUser()
-            
         }
     },[token])
 

@@ -10,14 +10,14 @@ function Products() {
     const [isAdmin] = state.userAPI.isAdmin
 
     return (
-        <>
+        <div className="shop-wrapper">
             <div className="products">
                 {products.map((product) => {
                     return <ProductItem key={product._id} product={product} isAdmin={isAdmin} />
                 })}
             </div>
             {products.length === 0 && <Loading />}
-        </>
+        </div>
     )
 }
 

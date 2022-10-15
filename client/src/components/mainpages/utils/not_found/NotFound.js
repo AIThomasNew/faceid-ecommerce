@@ -1,7 +1,17 @@
 import React from 'react'
 
 function NotFound() {
-    return <div>404 | NotFound</div>
+    return (
+        <div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+            <div>404 | NotFound</div>
+        </div>
+    )
 }
 
 export default NotFound

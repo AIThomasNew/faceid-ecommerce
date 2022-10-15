@@ -1,0 +1,25 @@
+.scroll {
+    position: fixed;
+    z-index: 2;
+    bottom: 2vh;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #dcdcdc;
+    right: 5%;
+    border: none;
+    cursor: pointer;
+}
+
+.scroll .i {
+    animation: scrollTop 0.5s alternate ease infinite;
+}
+
+@keyframes scrollTop {
+    from {
+        transform: translateY(2px);
+    }
+    to {
+        transform: translateY(-1px);
+    }
+}

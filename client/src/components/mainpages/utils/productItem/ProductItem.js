@@ -12,12 +12,15 @@ function ProductItem({product, isAdmin}) {
                     // onChange={() => handleCheck(product._id)}
                 />
             )}
-            <img src={product.images.url} alt="" />
-
+            <div className="product_img_box">
+                <img src={product.images.url} alt="" />
+            </div>
             <div className="product_box">
                 <h2 title={product.title}>{product.title}</h2>
-                <span>{product.price} руб.</span>
                 <p>{product.description}</p>
+                <div className='price_product'>
+                    <span>{product.price} руб.</span>
+                </div>
             </div>
 
             <BtnRender product={product} />
