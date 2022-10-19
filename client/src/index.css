@@ -80,7 +80,7 @@ button {
 @import url('./components/mainpages/DetailProduct/detailProduct.css');
 
 /* ------------- Login/Register ----------------- */
-@import url('./components/mainpages/auth/login.css');
+@import url('./components/mainpages/Auth/login.css');
 
 /* ------------ Cart ------------------- */
 @import url('./components/mainpages/Cart/cart.css');
@@ -89,10 +89,10 @@ button {
 /* @import url("./components/mainpages/history/history.css"); */
 
 /* ------------------ Categories ------------------ */
-/* @import url("./components/mainpages/categories/categories.css"); */
+@import url('./components/mainpages/Categories/categories.css');
 
 /* ------------------- Create Product -------------- */
-/* @import url("./components/mainpages/createProduct/createProduct.css"); */
+@import url('./components/mainpages/CreateProduct/createProduct.css');
 
 /* ----------------- Responsive ------------------ */
 /* @media (max-width: 820px){

@@ -31,7 +31,7 @@ function UserAPI(token) {
     },[token])
 
     const addCart = async (product) => {
-        if (!isLogged) return alert("Please login to continue buying")
+        if (!isLogged) return alert("Пожалуйста, войдите, чтобы продолжить покупку")
 
         const check = cart.every(item =>{
             return item._id !== product._id
@@ -45,7 +45,7 @@ function UserAPI(token) {
             })
 
         } else {
-            alert("This product has been added to cart.")
+            alert("Этот продукт был добавлен в корзину.")
         }
     }
 

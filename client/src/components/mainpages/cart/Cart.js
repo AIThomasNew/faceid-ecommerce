@@ -1,11 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom'
+import {VscChromeClose} from 'react-icons/vsc'
+import axios from 'axios'
 
 
 function Cart() {
     const state = useContext(GlobalState)
-    const [cart] = state.userAPI.cart
+    const [cart, setCart] = state.userAPI.cart
+    const [token] = state.token
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
@@ -20,7 +23,48 @@ function Cart() {
         getTotal()
     },[cart])
 
-    if (cart.length === 0) return <h2 style={{textAlign: 'center', fontSize: '5rem'}}>Cart Empty</h2>
+    const addToCart = async () => {
+        await axios.patch('/user/addcart', {cart}, {
+            headers: {Authorization: token}
+        })
+    }
+    const increment = (id) => {
+        cart.forEach(item => {
+            if (item._id === id) {
+                item.quantity += 1
+            }
+        })
+
+        setCart([...cart])
+        addToCart()
+    }
+    const decrement = (id) => {
+        cart.forEach(item => {
+            if (item._id === id) {
+                item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
+            }
+        })
+
+        setCart([...cart])
+        addToCart()
+    }
+    const removeProduct = id => {
+        if(window.confirm('Вы хотите удалить этот продукт?')) {
+            cart.forEach((item, index) => {
+                if(item._id === id) {
+                    cart.splice(index, 1)
+                }
+            })
+
+            setCart([...cart])
+            addToCart()
+        }
+    }
+
+
+    if (cart.length === 0) 
+        return <h2 style={{textAlign: 'center', fontSize: '2rem', fontWeight: '400', margin: '200px 0 200px 0', color: 'silver'}}>В корзине пусто</h2>
+
 
     return (
         <div>
@@ -36,12 +80,14 @@ function Cart() {
                         <p>{product.content}</p>
 
                         <div className="amount">
-                            <button> - </button>
+                            <button onClick={() => decrement(product._id)}> - </button>
                             <span>{product.quantity}</span>
-                            <button> + </button>
+                            <button onClick={() => increment(product._id)}> + </button>
                         </div>
 
-                        <div className="delete">X</div>
+                        <div className="delete" onClick={() => removeProduct(product._id)}>
+                            <VscChromeClose fontSize={27} className="overlay__close" />
+                        </div>
                     </div>
                 </div>
             ))}

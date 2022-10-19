@@ -3,13 +3,9 @@ import React from 'react'
 function NotFound() {
     return (
         <div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
-            <div>404 | NotFound</div>
+            <div style={{fontSize: '30px', fontWeight: 300, margin: '200px 0 200px 0', textAlign: 'center', color: 'silver'}}>
+                404 | NotFound :(
+            </div>
         </div>
     )
 }
