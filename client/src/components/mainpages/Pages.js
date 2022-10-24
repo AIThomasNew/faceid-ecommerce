@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import {Scroll} from '../mainpages/Scroll/ScrollToTop'
-import {GlobalState} from '../../GlobalState'
 
 import Home from './Home/Home'
 import Study from './Study/Study'
@@ -15,6 +14,11 @@ import CreateProduct from './CreateProduct/CreateProduct'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
 import NotFound from './utils/not_found/NotFound'
+// import OrderHistory from './History/OrderHistory'
+// import OrderDetails from './History/OrderDetails'
+
+
+import {GlobalState} from '../../GlobalState'
 
 
 function Pages() {
@@ -36,6 +40,10 @@ function Pages() {
 
                 <Route path="/category" exact element={isAdmin ? <Categories /> : <NotFound/>} />
                 <Route path="/create_product" exact element={isAdmin ? <CreateProduct /> : <NotFound/>} />
+                <Route path="/edit_product/:id" exact element={isAdmin ? <CreateProduct /> : <NotFound/>} />
+
+                {/* <Route path="/history" exact component={isLogged ? <OrderHistory /> : <NotFound />} /> */}
+                {/* <Route path="/history/:id" exact component={isLogged ? <OrderDetails /> : <NotFound />} /> */}
 
                 <Route path="/login" exact element={isLogged ? <NotFound /> : <Login />} />
                 <Route path="/register" exact element={isLogged ? <NotFound /> : <Register />} />

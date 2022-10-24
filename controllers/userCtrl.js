@@ -50,7 +50,7 @@ const userCtrl = {
             const isMatch = await bcrypt.compare(password, user.password)
             if (!isMatch) return res.status(400).json({msg: 'Некорректный пароль.'})
 
-            // If login success , create access token and refresh token
+            // При успешном входе в систему создать токен доступа и обновить токен
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
 
@@ -111,15 +111,15 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    // history: async(req, res) =>{
-    //     try {
-    //         const history = await Payments.find({user_id: req.user.id})
+    history: async(req, res) =>{
+        try {
+            const history = await Payments.find({user_id: req.user.id})
 
-    //         res.json(history)
-    //     } catch (err) {
-    //         return res.status(500).json({msg: err.message})
-    //     }
-    // }
+            res.json(history)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    }
 }
 
 const createAccessToken = (user) => {

@@ -2,12 +2,17 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+.create_product .upload {
+    margin-top: 60px;
+    margin-right: 60px;
 }
 .upload {
     max-width: 450px;
-    height: 500px;
+    height: 400px;
     width: 100%;
     box-shadow: 0 0 15px #ddd;
     border-radius: 20px;
@@ -31,7 +36,7 @@
     top: 0;
     left: 0;
     background: white;
-    color: rgb(250, 200, 107);
+    color: var(--color-blue);
     font-size: 17rem;
     text-align: center;
     cursor: pointer;

@@ -86,7 +86,7 @@ button {
 @import url('./components/mainpages/Cart/cart.css');
 
 /* --------------- History ------------------- */
-/* @import url("./components/mainpages/history/history.css"); */
+/* @import url("./components/mainpages/History/history.css"); */
 
 /* ------------------ Categories ------------------ */
 @import url('./components/mainpages/Categories/categories.css');
@@ -95,7 +95,7 @@ button {
 @import url('./components/mainpages/CreateProduct/createProduct.css');
 
 /* ----------------- Responsive ------------------ */
-/* @media (max-width: 820px){
+@media (max-width: 820px){
   header .logo{
     min-width: 115px;
     flex: none;
@@ -168,4 +168,4 @@ button {
   .create_product .upload{
     margin: 20px 0;
   }
-} */
+}

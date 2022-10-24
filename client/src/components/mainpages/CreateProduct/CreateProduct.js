@@ -2,15 +2,14 @@ import React, {useState, useContext, useEffect} from 'react'
 import axios from 'axios'
 import {GlobalState} from '../../../GlobalState'
 import Loading from '../utils/loading/Loading'
-import {useParams} from 'react-router-dom'
-// import {useHistory, useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 const initialState = {
     product_id: '',
     title: '',
     price: 0,
-    description: 'Какое-то любопытное описание.',
-    content: 'Какой-то интересный контент.',
+    description: '',
+    content: '',
     category: '',
     _id: ''
 }
@@ -23,103 +22,101 @@ function CreateProduct() {
     const [loading, setLoading] = useState(false)
 
 
-    // const [isAdmin] = state.userAPI.isAdmin
-    // const [token] = state.token
+    const [isAdmin] = state.userAPI.isAdmin
+    const [token] = state.token
 
-    // const history = useHistory()
-    // const param = useParams()
+    const navigate = useNavigate()
+    const param = useParams()
 
-    // const [products] = state.productsAPI.products
-    // const [onEdit, setOnEdit] = useState(false)
-    // const [callback, setCallback] = state.productsAPI.callback
+    const [products] = state.productsAPI.products
+    const [onEdit, setOnEdit] = useState(false)
+    const [callback, setCallback] = state.productsAPI.callback
 
-    
-    // useEffect(() => {
-    //     if(param.id){
-    //         setOnEdit(true)
-    //         products.forEach(product => {
-    //             if(product._id === param.id) {
-    //                 setProduct(product)
-    //                 setImages(product.images)
-    //             }
-    //         })
-    //     }else{
-    //         setOnEdit(false)
-    //         setProduct(initialState)
-    //         setImages(false)
-    //     }
-    // }, [param.id, products])
+    useEffect(() => {
+        if(param.id){
+            setOnEdit(true)
+            products.forEach(product => {
+                if(product._id === param.id) {
+                    setProduct(product)
+                    setImages(product.images)
+                }
+            })
+        }else{
+            setOnEdit(false)
+            setProduct(initialState)
+            setImages(false)
+        }
+    }, [param.id, products])
 
-
-    // const handleUpload = async e =>{
-    //     e.preventDefault()
-    //     try {
-    //         if(!isAdmin) return alert("You're not an admin")
-    //         const file = e.target.files[0]
+    const handleUpload = async e =>{
+        e.preventDefault()
+        try {
+            if(!isAdmin) return alert("Вы не администратор")
+            const file = e.target.files[0]
             
-    //         if(!file) return alert("File not exist.")
+            if(!file) return alert("Файл не существует.")
 
-    //         if(file.size > 1024 * 1024) // 1mb
-    //             return alert("Size too large!")
+            if(file.size > 1024 * 1024) // 1mb
+                return alert("Размер слишком большой!")
 
-    //         if(file.type !== 'image/jpeg' && file.type !== 'image/png') // 1mb
-    //             return alert("File format is incorrect.")
+            if(file.type !== 'image/jpeg' && file.type !== 'image/png') // 1mb
+                return alert("Формат файла неверен.")
 
-    //         let formData = new FormData()
-    //         formData.append('file', file)
+            let formData = new FormData()
+            formData.append('file', file)
 
-    //         setLoading(true)
-    //         const res = await axios.post('/api/upload', formData, {
-    //             headers: {'content-type': 'multipart/form-data', Authorization: token}
-    //         })
-    //         setLoading(false)
-    //         setImages(res.data)
+            setLoading(true)
+            const res = await axios.post('/api/upload', formData, {
+                headers: {'content-type': 'multipart/form-data', Authorization: token}
+            })
+            setLoading(false)
+            setImages(res.data)
 
-    //     } catch (err) {
-    //         alert(err.response.data.msg)
-    //     }
-    // }
+        } catch (err) {
+            alert(err.response.data.msg)
+        }
+    }
 
-    // const handleDestroy = async () => {
-    //     try {
-    //         if(!isAdmin) return alert("You're not an admin")
-    //         setLoading(true)
-    //         await axios.post('/api/destroy', {public_id: images.public_id}, {
-    //             headers: {Authorization: token}
-    //         })
-    //         setLoading(false)
-    //         setImages(false)
-    //     } catch (err) {
-    //         alert(err.response.data.msg)
-    //     }
-    // }
+    const handleDestroy = async () => {
+        try {
+            if(!isAdmin) return alert("Вы не администратор")
+            setLoading(true)
+            await axios.post('/api/destroy', {public_id: images.public_id}, {
+                headers: {Authorization: token}
+            })
+            setLoading(false)
+            setImages(false)
+        } catch (err) {
+            alert(err.response.data.msg)
+        }
+    }
 
-    // const handleChangeInput = e =>{
-    //     const {name, value} = e.target
-    //     setProduct({...product, [name]:value})
-    // }
+    const handleChangeInput = e =>{
+        const {name, value} = e.target
+        setProduct({...product, [name]:value})
+    }
 
-    // const handleSubmit = async e =>{
-    //     e.preventDefault()
-    //     try {
-    //         if(!isAdmin) return alert("You're not an admin")
-    //         if(!images) return alert("No Image Upload")
+    const handleSubmit = async e =>{
+        e.preventDefault()
+        try {
+            if(!isAdmin) return alert("Вы не администратор")
+            if(!images) return alert("Нет загрузки изображения")
 
-    //         if(onEdit){
-    //             await axios.put(`/api/products/${product._id}`, {...product, images}, {
-    //                 headers: {Authorization: token}
-    //             })
-    //         }else{
-    //             await axios.post('/api/products', {...product, images}, {
-    //                 headers: {Authorization: token}
-    //             })
-    //         }
-    //         setCallback(!callback)
-    //         // history.push("/")
-    //     } catch (err) {
-    //         alert(err.response.data.msg)
-    //     }
-    // }
+            if(onEdit){
+                await axios.put(`/api/products/${product._id}`, {...product, images}, {
+                    headers: {Authorization: token}
+                })
+            }else{
+                await axios.post('/api/products', {...product, images}, {
+                    headers: {Authorization: token}
+                })
+            }
+            setCallback(!callback)
+            navigate("/")
+        } catch (err) {
+            alert(err.response.data.msg)
+        }
+    }
 
     const styleUpload = {
         display: images ? "block" : "none"
@@ -127,62 +124,57 @@ function CreateProduct() {
     return (
         <div className="create_product">
             <div className="upload">
-                {/* <input type="file" name="file" id="file_up" onChange={handleUpload}/> */}
-                <input type="file" name="file" id="file_up"/>
+                <input type="file" name="file" id="file_up" onChange={handleUpload}/>
                 {
-                    loading ? <div id="file_img"><Loading /></div>
-
-                    :<div id="file_img" style={styleUpload}>
+                    loading
+                    ?
+                    <div style={{paddingTop: '40px'}} id="file_img">
+                        <Loading />
+                    </div>
+                    :
+                    <div id="file_img" style={styleUpload}>
                         <img src={images ? images.url : ''} alt=""/>
-                        {/* <span onClick={handleDestroy}>X</span> */}
-                        <span>X</span>
+                        <span onClick={handleDestroy}>X</span>
                     </div>
                 }
                 
             </div>
 
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="row">
-                    <label htmlFor="product_id">Product ID</label>
+                    <label htmlFor="product_id">Код товара</label>
                     <input type="text" name="product_id" id="product_id" required
-                    // value={product.product_id} onChange={handleChangeInput} disabled={onEdit} />
-                    value={product.product_id} />
+                    value={product.product_id} onChange={handleChangeInput} disabled={onEdit} />
                 </div>
 
                 <div className="row">
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="title">Название</label>
                     <input type="text" name="title" id="title" required
-                    // value={product.title} onChange={handleChangeInput} />
-                    value={product.title} />
+                    value={product.title} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
-                    <label htmlFor="price">Price</label>
+                    <label htmlFor="price">Цена</label>
                     <input type="number" name="price" id="price" required
-                    // value={product.price} onChange={handleChangeInput} />
-                    value={product.price} />
+                    value={product.price} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
-                    <label htmlFor="description">Description</label>
+                    <label htmlFor="description">Описание</label>
                     <textarea type="text" name="description" id="description" required
-                    // value={product.description} rows="5" onChange={handleChangeInput} />
-                    value={product.description} rows="5" />
+                    value={product.description} rows="5" onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
-                    <label htmlFor="content">Content</label>
+                    <label htmlFor="content">Содержание</label>
                     <textarea type="text" name="content" id="content" required
-                    // value={product.content} rows="7" onChange={handleChangeInput} />
-                    value={product.content} rows="7" />
+                    value={product.content} rows="7" onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
-                    <label htmlFor="categories">Categories: </label>
-                    {/* <select name="category" value={product.category} onChange={handleChangeInput} > */}
-                    <select name="category" value={product.category}>
-                        <option value="">Please select a category</option>
+                    <label htmlFor="categories">Категории: </label>
+                    <select name="category" value={product.category} onChange={handleChangeInput} >
+                        <option value="">Пожалуйста, выберите категорию</option>
                         {
                             categories.map(category => (
                                 <option value={category._id} key={category._id}>
@@ -192,9 +184,10 @@ function CreateProduct() {
                         }
                     </select>
                 </div>
-
-                {/* <button type="submit">{onEdit? "Update" : "Create"}</button> */}
-                <button className='create-button' type="submit">Создать</button>
+                
+                <button className='create-button' type="submit">
+                    {onEdit? "Обновить" : "Создать"}
+                </button>
             </form>
         </div>
     )

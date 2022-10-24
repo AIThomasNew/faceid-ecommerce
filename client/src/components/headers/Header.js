@@ -31,7 +31,9 @@ const Header = () => {
 
     const logoutUser = async () =>{
         await axios.get('/user/logout')
+
         localStorage.removeItem('firstLogin')
+        
         window.location.href = "/"
     }
 
@@ -58,9 +60,9 @@ const Header = () => {
         <motion.nav initial="hidden" whileInView="visible" className="app__navbar">
 
             <motion.div variants={textAnimation} className="app__navbar-logo">
-            {/* {isAdmin ? <h3 style={{color: "#fff"}}>Админ</h3> : <img src={images.faceid} alt="app__logo" />}
-             */}
                 <img src={images.faceid} alt="app__logo" />
+                {/* {isAdmin ? <h3 style={{color: "#fff"}}>Админ</h3> : <img src={images.faceid} alt="app__logo" />} */}
+            
             </motion.div>
 
 
@@ -70,7 +72,6 @@ const Header = () => {
                 <Link to="/services" className="p__opensans">УСЛУГИ</Link>
                 <Link to="/shop" className="p__opensans">{isAdmin ? 'ТОВАРЫ' : 'МАГАЗИН'}</Link>
             </motion.div>
-
 
 
             <motion.div variants={textAnimation} className="app__navbar-login">

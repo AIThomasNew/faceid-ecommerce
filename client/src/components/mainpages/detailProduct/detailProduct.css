@@ -24,6 +24,11 @@
     object-fit: cover;
     display: block;
 }
+.detail span {
+    color: var(--color-red);
+    font-weight: 600;
+    /* margin: 7px 0 7px 0; */
+}
 .box-detail {
     max-width: 500px;
     width: 100%;

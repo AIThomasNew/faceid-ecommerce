@@ -19,48 +19,108 @@
 @import url('../utils/productItem/productItem.css');
 
 .delete-all {
-    text-align: right;
-    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 6px;
+    margin-right: 55px;
 }
 .delete-all input {
     height: 25px;
     width: 25px;
     transform: translateY(5px);
     margin: 0 15px;
+    margin-bottom: 8px;
 }
 .delete-all span {
     text-transform: uppercase;
-    color: rgb(3, 165, 206);
+    color: var(--color-blue);
     letter-spacing: 1.3px;
 }
-.delete-all button {
-    border: 1px solid crimson;
+/* .delete-all button {
+    border: 1px solid var(--color-red);
     padding: 10px 25px;
-    color: crimson;
+    color: var(--color-red);
     text-transform: uppercase;
+} */
+.delete-all button {
+    width: 180px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.18);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    font-weight: 400;
+
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 20px;
+    color: var(--color-silver);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    background-color: #fff;
+}
+.delete-all button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-red);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.delete-all button:hover::before {
+    width: 100%;
+}
+.delete-all button:hover {
+    color: #fff;
 }
 
 /* ------------ Filters Menu ----------------- */
+
 .filter_menu {
-    width: 100%;
-    min-height: 40px;
+    /* width: 90%; */
+    min-height: 100px;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 15px 0;
+    padding: 0 15px 0 15px;
+    margin: 0 30px 0 30px;
+    /* margin: 15px 0; */
+    /* border: 1px solid silver; */
+}
+.row {
+    margin-left: 8px;
+}
+.filter-sort-select {
+    box-shadow: 0 0 15px #ddd; 
+    border-radius: 20px;
+    border: 0px solid;
+    margin-left: 7px;
+    /* text-indent: 10px; */
+}
+.filter_menu .row select {
+    min-width: 130px;
 }
 .filter_menu select,
 input {
-    border: 1px solid #ccc;
     outline: none;
     height: 40px;
-    padding: 0 5px;
+    padding: 0 8px;
 }
 .filter_menu input {
-    flex: 1;
     margin: 0 10px;
+    width: 350px;
+    /* flex: 1; */
 }
 
 /* -------------------- Load More --------------- */
