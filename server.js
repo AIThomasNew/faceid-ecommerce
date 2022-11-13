@@ -18,17 +18,15 @@ app.use(
 )
 
 
-
-// Routes
+// Роутинг
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/productRouter'))
-// app.use('/api', require('./routes/paymentRouter'))
+// app.use('/api', require('./routes/paymentRouter')) // оплата
 
 
-
-// Connect to mongodb
+// Подключение к базе данных MongoDB
 const URI = process.env.MONGODB_URL
 mongoose
     .connect(URI, {
@@ -37,7 +35,6 @@ mongoose
     })
     .then(() => console.log('Подключение с MongoDB установлено'))
     .catch((err) => console.log('Ошибка с подключением MongoDB', err))
-
 
 
 

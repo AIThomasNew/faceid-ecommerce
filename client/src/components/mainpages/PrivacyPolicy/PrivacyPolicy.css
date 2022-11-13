@@ -1,0 +1,18 @@
+.privacy-policy-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 150px 110px 150px;
+}
+.privacy-policy-container h1 {
+    margin: 20px 0 10px 0;
+}
+.privacy-policy-container h3 {
+    margin: 35px 0 15px 0;
+}
+.privacy-policy-container p {
+    margin-bottom: 10px;
+}
+li {
+    list-style-type: none;
+}

@@ -1,6 +1,7 @@
 .app__header {
   background-color: #0c0c0c;
   margin: 0;
+  padding-bottom: 150px;
   /* Full height */
   /* height: 100%; */
   min-height: 850px;

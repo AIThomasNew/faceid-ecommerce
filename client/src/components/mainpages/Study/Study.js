@@ -1,14 +1,14 @@
-import React, { useRef, useEffect } from 'react'
+import React, {useRef, useEffect} from 'react'
 import './Study.css'
 import irinaStudy from './index'
 import VanillaTilt from 'vanilla-tilt'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
+import {NavLink} from 'react-router-dom'
 
-import { NavLink } from 'react-router-dom'
 
-// ванильная функция из библиотека
+
 function Tilt(props) {
-    const { options, ...rest } = props
+    const {options, ...rest} = props
     const tilt = useRef(null)
 
     useEffect(() => {
@@ -34,13 +34,13 @@ const textAnimationDown = {
 }
 
 
+
 const Study = () => {
     const options = {
         scale: 1.2,
         speed: 1000,
         max: 25,
     }
-
 
     return (
         <motion.div initial="hidden" whileInView="visible" variants={textAnimationDown} className="Study" id="study">
@@ -56,12 +56,11 @@ const Study = () => {
                         </NavLink>
                     </Tilt>
                     <Tilt className="tilt" options={options}>
-                        <NavLink to="/fulltime" className="box box__2">
+                        <NavLink to="/offline" className="box box__2">
                             <p>ОЧНОЕ ОБУЧЕНИЕ</p>
                         </NavLink>
                     </Tilt>
                 </div>
-
                 <div className="study__photo">
                     <img className="irina_study" src={irinaStudy} />
                 </div>

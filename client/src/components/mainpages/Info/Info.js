@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useLocation } from 'react-router-dom'
 
-// компонент "СВЕДЕНИЯ ОБ ОБРАЗОВАТЕЛЬНОЙ ОРГАНИЗАЦИИ"
+
+
 const Info = () => {
+        const {pathname} = useLocation()
+        useEffect(() => {
+            window.scrollTo(0, 0)
+        }, [pathname])
+
     //     var pathToFile = "....";
     //          downloadFile(file) {
     //     location.href = pathToFile + file;
@@ -18,5 +25,7 @@ const Info = () => {
         </div>
     )
 }
+
+
 
 export default Info

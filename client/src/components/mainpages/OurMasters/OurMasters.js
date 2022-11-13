@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './OurMasters.css'
-import {Link} from 'react-router-dom'
 import useCollapse from 'react-collapsed'
+import {useLocation} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {masterIrina, masterAnna, masterLilia, masterNasty, masterStefania} from './index'
 
@@ -50,16 +50,24 @@ const textAnimationDown = {
     }),
 }
 
+
+
 const OurMasters = () => {
     const [isExpanded, setExpanded] = useState(false)
     const {getCollapseProps, getToggleProps} = useCollapse({isExpanded})
+
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
     return (
         <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{amount: 0.2, once: true}}
-            className="OurMasters app__bg">
+            className="OurMasters app__bg"
+        >
             <motion.h1 custom={1} variants={textAnimationUp} className="headtext__cormorant">
                 Наши мастера
             </motion.h1>
@@ -160,7 +168,8 @@ const OurMasters = () => {
                                     className="btn-read-next"
                                     {...getToggleProps({
                                         onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-                                    })}>
+                                    })}
+                                >
                                     {isExpanded ? 'Свернуть' : 'Читать далее...'}
                                 </button>
                             </div>
@@ -171,9 +180,9 @@ const OurMasters = () => {
             </div>
 
             <div>
-                <Link to="/entry" className="container__price">
+                <a href="https://n421875.yclients.com/" className="container__price">
                     <p>Записаться</p>
-                </Link>
+                </a>
             </div>
         </motion.div>
     )

@@ -128,8 +128,15 @@ input {
     text-align: center;
 }
 .load_more button {
+    height: 40px;
     padding: 10px 25px;
     margin-bottom: 20px;
-    border: 1px solid #555;
+    border-radius: 20px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.18);
     text-transform: capitalize;
+    transition: all ease 300ms;
+}
+.load_more button:hover {
+    transform: scale(1.1);
+    transition: all ease 300ms;
 }

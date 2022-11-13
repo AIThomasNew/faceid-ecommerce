@@ -1,24 +1,24 @@
 import React, {useContext} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import {Scroll} from '../mainpages/Scroll/ScrollToTop'
+import {GlobalState} from '../../GlobalState'
 
 import Home from './Home/Home'
 import Study from './Study/Study'
+import Online from './Study/Online'
+import Offline from './Study/Offline'
 import OurServices from './OurServices/OurServices'
 import OurMasters from './OurMasters/OurMasters'
+import Order from './OurMasters/Order/Order'
 import Products from './Products/Products'
 import DetailProduct from './DetailProduct/DetailProduct'
-import Cart from './Cart/Cart'
 import Categories from './Categories/Categories'
 import CreateProduct from './CreateProduct/CreateProduct'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
+import Cart from './Cart/Cart'
 import NotFound from './utils/not_found/NotFound'
-// import OrderHistory from './History/OrderHistory'
-// import OrderDetails from './History/OrderDetails'
-
-
-import {GlobalState} from '../../GlobalState'
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 
 
 function Pages() {
@@ -31,8 +31,11 @@ function Pages() {
             <Routes>
                 <Route index element={<Home />} />
                 <Route path="/study" element={<Study />} />
+                <Route path="/online" element={<Online />} />
+                <Route path="/offline" element={<Offline />} />
                 <Route path="/services" element={<OurServices />} />
                 <Route path="/price" element={<OurMasters />} />
+                <Route path="/order" element={<Order />} />
 
                 <Route path="/shop" exact element={<Products />} />
                 <Route path="/shop/detail/:id" exact element={<DetailProduct />} />
@@ -41,12 +44,14 @@ function Pages() {
                 <Route path="/category" exact element={isAdmin ? <Categories /> : <NotFound/>} />
                 <Route path="/create_product" exact element={isAdmin ? <CreateProduct /> : <NotFound/>} />
                 <Route path="/edit_product/:id" exact element={isAdmin ? <CreateProduct /> : <NotFound/>} />
-
+                
                 {/* <Route path="/history" exact component={isLogged ? <OrderHistory /> : <NotFound />} /> */}
                 {/* <Route path="/history/:id" exact component={isLogged ? <OrderDetails /> : <NotFound />} /> */}
 
                 <Route path="/login" exact element={isLogged ? <NotFound /> : <Login />} />
                 <Route path="/register" exact element={isLogged ? <NotFound /> : <Register />} />
+
+                <Route path="/privacy-policy" exact element={<PrivacyPolicy/> } />
 
                 <Route path="*" exact element={<NotFound />} />
             </Routes>

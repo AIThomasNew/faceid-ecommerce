@@ -1,11 +1,12 @@
 import React from 'react'
-import './OurServices.css'
 import {NavLink} from 'react-router-dom'
 import {motion} from 'framer-motion'
+import './OurServices.css'
 
 import servicesPhoto1 from '../../../assets/services/servicesPhoto1.jpg'
 import servicesPhoto2 from '../../../assets/services/servicesPhoto2.jpg'
 import servicesPhoto3 from '../../../assets/services/servicesPhoto3.jpg'
+
 
 const textAnimationUp = {
     hidden: {
@@ -41,6 +42,7 @@ const textAnimationDown = {
     }),
 }
 
+
 const OurServices = () => {
     return (
         <motion.div
@@ -48,7 +50,8 @@ const OurServices = () => {
             whileInView="visible"
             viewport={{amount: 0.2, once: true}}
             className="OurServices app__bg"
-            id="services">
+            id="services"
+        >
             <motion.h1 custom={1} variants={textAnimationUp} className="headtext__cormorant">
                 Центр ПМ FACE ID
             </motion.h1>
