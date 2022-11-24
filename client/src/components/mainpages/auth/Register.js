@@ -30,13 +30,13 @@ function Register() {
             <form onSubmit={registerSubmit}>
                 <h2>Регистрация</h2>
                 <input type="text" name="name" required
-                placeholder="Name" value={user.name} onChange={onChangeInput} />
+                placeholder="Имя" value={user.name} onChange={onChangeInput} />
 
                 <input type="email" name="email" required
                 placeholder="Email" value={user.email} onChange={onChangeInput} />
 
                 <input type="password" name="password" required autoComplete="on"
-                placeholder="Password" value={user.password} onChange={onChangeInput} />
+                placeholder="Пароль" value={user.password} onChange={onChangeInput} />
 
                 <div className="row">
                     <button className='button-register' type="submit">Ок</button>

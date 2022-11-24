@@ -4,7 +4,6 @@ import {DataProvider} from './GlobalState'
 import Header from './components/headers/Header'
 import MainPages from './components/mainpages/Pages'
 import Footer from './components/footer/Footer'
-
 import './App.css'
 
 

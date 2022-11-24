@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import './OurMasters.css'
 import useCollapse from 'react-collapsed'
 import {useLocation} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {masterIrina, masterAnna, masterLilia, masterNasty, masterStefania} from './index'
+import './OurMasters.css'
+
+
 
 const textAnimationUp = {
     hidden: {
@@ -53,6 +55,7 @@ const textAnimationDown = {
 
 
 const OurMasters = () => {
+
     const [isExpanded, setExpanded] = useState(false)
     const {getCollapseProps, getToggleProps} = useCollapse({isExpanded})
 
@@ -78,16 +81,15 @@ const OurMasters = () => {
                             <h2>Мастер-преподаватель Ирина:</h2>
                             <p className="p-silver">Перманентный макияж бровей/губ/век(стрелка) </p>
                             <ul>
-                                <li>Основная 7000р</li>
-                                <li>Коррекция 4000р</li>
-                                <li>Обновление 5000р</li>
-                                <li>Межресничка основная 5000р</li>
-                                <li>Коррекция 3000р</li>
-                                <li>Обновление 4000р</li>
-                                <li>Волоски: Основная 5000р</li>
-                                <li>Волоски: Коррекция 3000р</li>
+                                <li>Основная <span>7000р</span></li>
+                                <li>Коррекция <span>4000р</span></li>
+                                <li>Обновление <span>5000р</span></li>
+                                <li>Межресничка основная <span>5000р</span></li>
+                                <li>Коррекция <span>3000р</span></li>
+                                <li>Обновление <span>4000р</span></li>
+                                <li>Волоски: Основная <span>5000р</span></li>
+                                <li>Волоски: Коррекция <span>3000р</span></li>
                             </ul>
-                            {/* <a href="#">Записаться</a> */}
                         </div>
                         <img className="imageMasters" src={masterIrina} />
                     </motion.div>
@@ -106,9 +108,9 @@ const OurMasters = () => {
                             <h2>Топ-мастер: Анна</h2>
                             <p className="p-silver">Перманентный макияж бровей/губ/век (межресничка, стрелочка)</p>
                             <ul>
-                                <li>Основная 4000р</li>
-                                <li>Коррекция 2000р</li>
-                                <li>Обновление 4000р</li>
+                                <li>Основная <span>4000р</span></li>
+                                <li>Коррекция <span>2000р</span></li>
+                                <li>Обновление <span>4000р</span></li>
                             </ul>
                         </div>
 
@@ -120,13 +122,13 @@ const OurMasters = () => {
                             <h2>Стефания</h2>
                             <p className="p-silver">Перманентный макияж бровей/губ/век (межресничка, стрелочка)</p>
                             <ul>
-                                <li>Основная 4000р</li>
-                                <li>Коррекция 2000р</li>
-                                <li>Обновление 4000р</li>
-                                <li>Удаление некачественного татуажа лазером брови-1500р</li>
-                                <li>Лазером веки-2000р</li>
-                                <li>Ремувер брови/губы/веки - 2500р</li>
-                                <li>Удаление тату от 500р</li>
+                                <li>Основная <span>4000р</span></li>
+                                <li>Коррекция <span>2000р</span></li>
+                                <li>Обновление <span>4000р</span></li>
+                                <li>Удаление некачественного татуажа лазером брови - <span>1500р</span></li>
+                                <li>Лазером веки - <span>2000р</span></li>
+                                <li>Ремувер брови/губы/веки - <span>2500р</span></li>
+                                <li>Удаление тату от <span>500р</span></li>
                             </ul>
                         </div>
                         <img className="imageMasters" src={masterStefania} />
@@ -140,28 +142,28 @@ const OurMasters = () => {
                                 <h2>Мастер: Лилия</h2>
                                 <p className="p-silver">Перманентный макияж бровей/губ/век (межресничка, стрелочка)</p>
                                 <ul>
-                                    <li>Основная 4000р</li>
-                                    <li>Коррекция 2000р</li>
-                                    <li>Обновление 4000р</li>
-                                    <li>Удаление некачественного татуажа лазером брови-1500р</li>
-                                    <li>Лазером веки-2000р</li>
-                                    <li>Ремувер брови/губы/веки - 2500р</li>
+                                    <li>Основная <span>4000р</span></li>
+                                    <li>Коррекция <span>2000р</span></li>
+                                    <li>Обновление <span>4000р</span></li>
+                                    <li>Удаление некачественного татуажа лазером брови - <span>1500р</span></li>
+                                    <li>Лазером веки - <span>2000р</span></li>
+                                    <li>Ремувер брови/губы/веки - <span>2500р</span></li>
                                 </ul>
                             </div>
 
                             <div>
                                 {/* <div {...getCollapseProps()}> */}
                                 <ul {...getCollapseProps()}>
-                                    <li>Удаление тату от 500р</li>
-                                    <li>Окрашивание ресниц - 200р</li>
-                                    <li>Окрашивание бровей - 200р</li>
-                                    <li>Оформление + окрашивание бровей краской - 500р </li>
-                                    <li>Оформление + окрашивание бровей хной - 700р</li>
-                                    <li>Ламинирование бровей - 1200р</li>
-                                    <li>Ламинирование ресниц - 1200р </li>
-                                    <li>КОМПЛЕКС: Ламинирование + оформление + окрашивание бровей краской - 1500р </li>
-                                    <li>КОМПЛЕКС: Ламинирование + оформление + окрашивание бровей хной - 1700р </li>
-                                    <li>Ламинирование ресниц + Ламинирование бровей - 2000р</li>
+                                    <li>Удаление тату от <span>500р</span></li>
+                                    <li>Окрашивание ресниц - <span>200р</span></li>
+                                    <li>Окрашивание бровей - <span>200р</span></li>
+                                    <li>Оформление + окрашивание бровей краской - <span>500р</span> </li>
+                                    <li>Оформление + окрашивание бровей хной - <span>700р</span></li>
+                                    <li>Ламинирование бровей - <span>1200р</span></li>
+                                    <li>Ламинирование ресниц - <span>1200р</span> </li>
+                                    <li>КОМПЛЕКС: Ламинирование + оформление + окрашивание бровей краской - <span>1500р</span> </li>
+                                    <li>КОМПЛЕКС: Ламинирование + оформление + окрашивание бровей хной - <span>1700р</span> </li>
+                                    <li>Ламинирование ресниц + Ламинирование бровей - <span>2000р</span></li>
                                 </ul>
                                 {/* </div> */}
                                 <button
@@ -187,5 +189,6 @@ const OurMasters = () => {
         </motion.div>
     )
 }
+
 
 export default OurMasters

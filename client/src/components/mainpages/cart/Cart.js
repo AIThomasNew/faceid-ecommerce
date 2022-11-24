@@ -6,6 +6,7 @@ import axios from 'axios'
 
 
 function Cart() {
+    
     const state = useContext(GlobalState)
     const [cart, setCart] = state.userAPI.cart
     const [token] = state.token

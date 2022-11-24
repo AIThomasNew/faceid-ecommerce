@@ -157,6 +157,10 @@
 .p__opensans li {
     margin-bottom: 20px;
 }
+.p__opensans li .GiDiamondTrophy {
+    margin-right: 20px;
+    padding-top: 3px;
+}
 
 .achievements {
     margin-top: 40px;

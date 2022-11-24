@@ -3,6 +3,7 @@ import './Header.css'
 import images from './index'
 import {motion} from 'framer-motion'
 
+
 const textAnimation = {
     hidden: {
         x: -200,
@@ -15,6 +16,8 @@ const textAnimation = {
         transition: {delay: custom * 0.2},
     }),
 }
+
+
 
 const Header = () => (
     <motion.div initial="hidden" whileInView="visible" className="app__header app__wrapper section__padding" id="home">

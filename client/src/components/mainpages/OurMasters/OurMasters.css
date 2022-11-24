@@ -118,9 +118,13 @@
     padding-bottom: 1.8px;
 }
 
-.OurMasters__cards .OurMasters__card-Master .OurMasters__card-Masters-content ul {
-    margin-left: 19px;
+.OurMasters__cards .OurMasters__card-Master .OurMasters__card-Masters-content li span {
+    color: var(--color-red);
 }
+
+/* .OurMasters__cards .OurMasters__card-Master .OurMasters__card-Masters-content ul {
+    width: 400px;
+} */
 
 .p-silver {
     color: rgb(58, 58, 58);

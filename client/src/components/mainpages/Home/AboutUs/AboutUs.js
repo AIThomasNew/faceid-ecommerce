@@ -4,6 +4,7 @@ import imagesVertical from './imagesV'
 import imageHorizontal from './imagesH'
 import {motion} from 'framer-motion'
 import Arrow from './img/arrow-right-solid.svg'
+import {GiDiamondTrophy} from 'react-icons/gi'
 
 const textAnimation = {
     hidden: {
@@ -76,32 +77,50 @@ const AboutUs = () => {
                         <ul className="p__opensans">
                             <motion.div custom={4} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> 1 место номинация "Губы" Профи г.Оренбург, 2022
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    1 место номинация "Губы" Профи г.Оренбург, 2022
                                 </li>
                             </motion.div>
                             <motion.div custom={6} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> Гран-при extra "Permanent", Perm 2019
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    Гран-при extra "Permanent", Perm 2019
                                 </li>
                             </motion.div>
                             <motion.div custom={8} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> Extra Permanent Лучший ПМ бровей по мнению судьи, октябрь 2019 г, Perm
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    Extra Permanent Лучший ПМ бровей по мнению судьи, октябрь 2019 г, Perm
                                 </li>
                             </motion.div>
                             <motion.div custom={10} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> 3 место Профи ПМ губ в технике "Акварель", Perm 2019
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    3 место Профи ПМ губ в технике "Акварель", Perm 2019
                                 </li>
                             </motion.div>
                             <motion.div custom={12} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> "Лучшие веки" на чемпионате "EXTRA PERMANENT" Perm 2019
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    "Лучшие веки" на чемпионате "EXTRA PERMANENT" Perm 2019
                                 </li>
                             </motion.div>
                             <motion.div custom={14} variants={textAnimationLeft}>
                                 <li>
-                                    <div>➜</div> 3 место Профи ПМ бровей в технике "Напыление", Пермь 2019
+                                    <div className="GiDiamondTrophy">
+                                        <GiDiamondTrophy />
+                                    </div>{' '}
+                                    3 место Профи ПМ бровей в технике "Напыление", Пермь 2019
                                 </li>
                             </motion.div>
                         </ul>

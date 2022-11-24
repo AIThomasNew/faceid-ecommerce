@@ -1,10 +1,9 @@
 import React, {useRef, useEffect} from 'react'
-import './Study.css'
 import irinaStudy from './index'
 import VanillaTilt from 'vanilla-tilt'
 import {motion} from 'framer-motion'
 import {NavLink} from 'react-router-dom'
-
+import './Study.css'
 
 
 function Tilt(props) {
@@ -36,6 +35,7 @@ const textAnimationDown = {
 
 
 const Study = () => {
+    
     const options = {
         scale: 1.2,
         speed: 1000,
@@ -43,7 +43,13 @@ const Study = () => {
     }
 
     return (
-        <motion.div initial="hidden" whileInView="visible" variants={textAnimationDown} className="Study" id="study">
+        <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            variants={textAnimationDown} 
+            className="Study" 
+            id="study"
+        >
             <div className="study__content">
                 {/* <div className="study__header">
                     <h1 className=" headtext__cormorant_study">Обучающие курсы</h1>

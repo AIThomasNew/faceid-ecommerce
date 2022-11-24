@@ -7,7 +7,6 @@ import servicesPhoto1 from '../../../assets/services/servicesPhoto1.jpg'
 import servicesPhoto2 from '../../../assets/services/servicesPhoto2.jpg'
 import servicesPhoto3 from '../../../assets/services/servicesPhoto3.jpg'
 
-
 const textAnimationUp = {
     hidden: {
         y: -200,
@@ -42,7 +41,6 @@ const textAnimationDown = {
     }),
 }
 
-
 const OurServices = () => {
     return (
         <motion.div
@@ -69,6 +67,7 @@ const OurServices = () => {
                         </p>
                     </div>
                 </div>
+
                 <div className="container__services-box">
                     <div className="icon icon-2">
                         <img className="imageService" src={servicesPhoto2} />

@@ -9,6 +9,19 @@
     /* background: rgb(202, 202, 202); */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container__services {
     position: relative;
     display: flex;
@@ -19,7 +32,6 @@
     width: 900px;
     margin-top: 47px;
 }
-
 .container__services .container__services-box {
     position: relative;
     width: 270px;
@@ -28,7 +40,6 @@
     border-radius: 20px;
     overflow: hidden;
 }
-
 .container__services .container__services-box .imageService {
     position: absolute;
     top: 0;
@@ -41,7 +52,6 @@
     align-items: center;
     z-index: 2;
 }
-
 .container__services .container__services-box:hover .imageService {
     top: 25px;
     left: calc(50% - 40px);
@@ -49,17 +59,14 @@
     height: 80px;
     border-radius: 50%;
 }
-
 .container__services .container__services-box .imageService ion-icon {
     font-size: 5em;
     color: #fff;
     transition: 0.5s;
 }
-
 .container__services .container__services-box:hover .imageService ion-icon {
     font-size: 2em;
 }
-
 .container__services .container__services-box .content {
     position: relative;
     padding: 20px;
@@ -74,23 +81,42 @@
     transition: 0.5s;
     transition-delay: 0s;
 }
-
 .container__services .container__services-box:hover .content {
     transition-delay: 0s;
     transform: scale(1);
 }
-
 .container__services .container__services-box .content h2 {
     font-size: 23px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
 .container__services .container__services-box .content p {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .container__price {
     margin-top: 40px;
@@ -116,7 +142,6 @@
     transition: color 0.3s ease;
     background-color: #fff;
 }
-
 .container__price::before {
     content: '';
     position: absolute;
