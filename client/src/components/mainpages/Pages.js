@@ -10,15 +10,17 @@ import Offline from './Study/Offline'
 import OurServices from './OurServices/OurServices'
 import OurMasters from './OurMasters/OurMasters'
 import Order from './OurMasters/Order/Order'
-import Products from './Products/Products'
-import DetailProduct from './DetailProduct/DetailProduct'
+import Products from './products/Products'
+import DetailProduct from './detailProduct/DetailProduct'
 import Categories from './Categories/Categories'
 import CreateProduct from './CreateProduct/CreateProduct'
-import Login from './Auth/Login'
-import Register from './Auth/Register'
-import Cart from './Cart/Cart'
+import Login from './auth/Login'
+import Register from './auth/Register'
+import Cart from './cart/Cart'
 import NotFound from './utils/not_found/NotFound'
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
+import Info from './Info/Info'
+
 
 
 function Pages() {
@@ -52,6 +54,7 @@ function Pages() {
                 <Route path="/register" exact element={isLogged ? <NotFound /> : <Register />} />
 
                 <Route path="/privacy-policy" exact element={<PrivacyPolicy/> } />
+                <Route path="/info" exact element={<Info/> } />
 
                 <Route path="*" exact element={<NotFound />} />
             </Routes>

@@ -3,7 +3,7 @@
     max-width: 500px;
     border-radius: 20px;
     padding: 30px;
-    margin: 50px auto;
+    margin: 150px auto;
     /* border: 2px solid silver; */
 }
 .login-page h2 {
@@ -55,7 +55,8 @@
     /* height: 70px; */
     border-radius: 20px;
     /* border-radius: 12px; */
-    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 15px #ddd;
+    /* box-shadow: 0 5px 40px rgba(0, 0, 0, 0.08); */
     transform-style: preserve-3d;
     transform: perspective(1000px);
     font-weight: 400;

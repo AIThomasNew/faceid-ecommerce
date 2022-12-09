@@ -1,9 +1,9 @@
 import React from 'react'
-import './Footer.css'
 import images from './index'
 import {NavLink} from 'react-router-dom'
 import {BsWhatsapp} from 'react-icons/bs'
 import {FaTelegramPlane} from 'react-icons/fa'
+import './Footer.css'
 
 
 

@@ -18,8 +18,16 @@
 .aboutus__header {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.aboutus__header span {
+    margin-top: 35px;
+    width: 90px;
+    border-top: 2px solid var(--color-blue);
+    display: flex;
+    margin-bottom: 40px;
 }
 
 .aboutus__main {
@@ -27,17 +35,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 25px;
     gap: 50px;
     height: 100%;
 }
 
 .app__aboutus-content_about {
     display: flex;
-    flex-direction: column;
-    width: 900px;
     text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 340px;
 }
+
+/* ========================================================================= GLARE ======== */
+.tilt-block {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.tilt-block .tilt h1 {
+    transform: translateZ(30px);
+}
+/* ========================================================================= GLARE ======== */
+
+.tilt {
+    display: flex;
+    height: 200px;
+    width: 600px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+}
+/* .tilt h1 {
+    transform: translateZ(30px);
+} */
 
 .app__aboutus-content_diplomas {
     display: flex;
@@ -71,7 +105,7 @@
     font-weight: 400;
     margin-top: 10px;
     /* text-transform: 'uppercase';  */
-    font-size: 30px;
+    font-size: 25px;
 }
 .headtext__cormorant__mini-blue {
     justify-content: center;

@@ -3,9 +3,17 @@ import './AboutUs.css'
 import imagesVertical from './imagesV'
 import imageHorizontal from './imagesH'
 import {motion} from 'framer-motion'
-import Arrow from './img/arrow-right-solid.svg'
 import {GiDiamondTrophy} from 'react-icons/gi'
+import VanillaTilt from 'vanilla-tilt'
 
+function Tilt(props) {
+    const {options, ...rest} = props
+    const tilt = useRef(null)
+    useEffect(() => {
+        VanillaTilt.init(tilt.current, options)
+    }, [options])
+    return <div ref={tilt} {...rest} />
+}
 const textAnimation = {
     hidden: {
         y: -200,
@@ -30,6 +38,13 @@ const textAnimationLeft = {
 }
 
 const AboutUs = () => {
+    const options = {
+        scale: 1.3,
+        speed: 200,
+        max: 25,
+        glare: true,
+    }
+
     const [width, setWidth] = useState(0)
     const carousel = useRef()
     const [width2, setWidth2] = useState(0)
@@ -55,24 +70,45 @@ const AboutUs = () => {
                     <motion.h1 custom={1} variants={textAnimation} className="headtext__cormorant">
                         Обо мне
                     </motion.h1>
+                    <span></span>
                 </div>
 
                 <div className="aboutus__main">
-                    <motion.div custom={2} variants={textAnimation} className="app__aboutus-content_about">
-                        <h1 className="headtext__cormorant__mini">
-                            Основатель Центра перманентного макияжа "FACE ID" в городе Перми
-                        </h1>
-                        {/* <h1 className="headtext__cormorant__mini">Основатель Центра перманентного </h1> */}
-                        {/* <h1 className="headtext__cormorant__mini-blue">макияжа "FACE ID" в городе Перми</h1> */}
+                    <motion.div className="app__aboutus-content_about">
+                        <motion.div custom={2} variants={textAnimation} className="tilt-block">
+                            <Tilt className="tilt" options={options}>
+                                <h1 className="headtext__cormorant__mini">
+                                    Основатель Центра перманентного макияжа «FACE ID» в городе Перми
+                                </h1>
+                            </Tilt>
+                        </motion.div>
+
+                        <motion.div custom={2} variants={textAnimation} className="tilt-block">
+                            <Tilt className="tilt" options={options}>
+                                <h1 className="headtext__cormorant__mini">
+                                    Сертифицированный тренер-преподаватель международного уровня
+                                </h1>
+                            </Tilt>
+                        </motion.div>
                     </motion.div>
-                    <motion.div custom={2} variants={textAnimationLeft} className="app__aboutus-content_about">
-                        {/* <h2 className="headtext__cormorant__mini">
-                            Сертифицированный тренер-преподаватель международного уровня
-                        </h2> */}
-                        <h2 className="headtext__cormorant__mini-blue">
-                            Сертифицированный тренер-преподаватель международного уровня
-                        </h2>
-                    </motion.div>
+
+                    {/* <motion.div custom={2} variants={textAnimation} className="app__aboutus-content_about"> */}
+                    {/* <h1 className="headtext__cormorant__mini"> */}
+                    {/* Основатель Центра перманентного макияжа "FACE ID" в городе Перми */}
+                    {/* </h1> */}
+                    {/* <h1 className="headtext__cormorant__mini">Основатель Центра перманентного </h1> */}
+                    {/* <h1 className="headtext__cormorant__mini-blue">макияжа "FACE ID" в городе Перми</h1> */}
+                    {/* </motion.div> */}
+
+                    {/* <motion.div custom={2} variants={textAnimationLeft} className="app__aboutus-content_about"> */}
+                    {/* <h2 className="headtext__cormorant__mini">
+                                        Сертифицированный тренер-преподаватель международного уровня
+                                    </h2> */}
+                    {/* <h2 className="headtext__cormorant__mini-blue"> */}
+                    {/* Сертифицированный тренер-преподаватель международного уровня */}
+                    {/* </h2> */}
+                    {/* </motion.div> */}
+
                     <div className="achievements">
                         <ul className="p__opensans">
                             <motion.div custom={4} variants={textAnimationLeft}>
