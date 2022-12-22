@@ -1,10 +1,9 @@
 .login-page {
-    box-shadow: 0 0 15px #ddd;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.06);
     max-width: 500px;
     border-radius: 20px;
     padding: 30px;
     margin: 150px auto;
-    /* border: 2px solid silver; */
 }
 .login-page h2 {
     text-transform: uppercase;
@@ -21,8 +20,7 @@
     height: 40px;
     margin: 10px 0;
     padding: 0 5px;
-    /* outline: rgb(3, 165, 206); */
-    box-shadow: 0 0 15px #ddd;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
     border: 0px solid;
 }
@@ -47,20 +45,13 @@
 
 
 .login-page form button {
-    /* border: 0.5px solid var(--color-red); */
     border: 0px solid;
     text-transform: uppercase;
-    /* margin-top: 30px; */
-    /* width: 150px; */
-    /* height: 70px; */
     border-radius: 20px;
-    /* border-radius: 12px; */
-    box-shadow: 0 0 15px #ddd;
-    /* box-shadow: 0 5px 40px rgba(0, 0, 0, 0.08); */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    font-weight: 400;
-
+    font-weight: 500;
     line-height: 1.5;
     display: flex;
     justify-content: center;

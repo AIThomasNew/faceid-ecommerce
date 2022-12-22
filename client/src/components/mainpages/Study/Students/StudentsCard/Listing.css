@@ -1,0 +1,73 @@
+.Student-listing {
+  width: 25%;
+  min-width: 230px;
+  max-width: 330px;
+  position: relative;
+  margin: 20px;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.Student-listing::before {
+  content: "";
+  display: block;
+  padding-bottom: calc((5 / 4) * 100%);
+}
+
+.Student-listing__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.Student-listing__image-container {
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+}
+
+.Student-listing__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+.Student-listing__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Student-listing__type {
+  position: absolute;
+  font-size: 0.8rem;
+  right: 10px;
+  top: 10px;
+  background-color: rgb(223, 247, 255);
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.Student-listing__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.Student-listing__subtitle {
+  font-weight: 300;
+  margin-top: -12px;
+}

@@ -3,10 +3,12 @@ import {Routes, Route} from 'react-router-dom'
 import {Scroll} from '../mainpages/Scroll/ScrollToTop'
 import {GlobalState} from '../../GlobalState'
 
+
+
 import Home from './Home/Home'
 import Study from './Study/Study'
 import Online from './Study/Online'
-import Offline from './Study/Offline'
+import Offline from './Study/Offline/Offline'
 import OurServices from './OurServices/OurServices'
 import OurMasters from './OurMasters/OurMasters'
 import Order from './OurMasters/Order/Order'

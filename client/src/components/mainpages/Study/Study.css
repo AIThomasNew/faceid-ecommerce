@@ -1,147 +1,285 @@
 /* ======================================================================================================= */
 
 .Study {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 45px;
+    height: 900px;
+}
+
+.Study-properties {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /* height: 100%; */
+    height: 650px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 5px;
+}
+
+.Study-listing {
+    width: 100%;
+    min-width: 400px;
+    /* min-width: 100%; */
+    max-width: 700px;
+    height: 450px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 4rem 0 4rem;
-    margin: 0;
-    height: 850px;
-    background: rgb(245, 245, 245);
-    color: rgb(241, 241, 241);
-    overflow: hidden;
-}
-
-.study__content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 0 80px 0 80px;
-}
-.study__header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom: 100px;
-}
-.headtext__cormorant_study {
-    font-family: var(--font-base);
-    color: var(--color-black);
-    font-size: 45px;
-    line-height: 80.2px;
-    letter-spacing: 0.04em;
-    text-transform: capitalize;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.study__cards-courses {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-}
-.box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 450px;
-    height: 170px;
-    border-radius: 12px;
-    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.18);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    letter-spacing: 1.5px;
-}
-.box__1 {
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    border-radius: 20px;
-    color: var(--color-red);
+    margin: 20px;
     cursor: pointer;
-    user-select: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
+    border-radius: 10px;
     overflow: hidden;
-    transition: color 0.3s ease;
-    background-color: #fff;
 }
-.box__1::before {
+
+.Study-listing::before {
     content: '';
+    display: block;
+    padding-bottom: calc((5 / 4) * 100%);
+}
+
+.Study-listing__content {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
-    width: 0%;
-    background-color: var(--color-red);
-    z-index: -1;
-    transition: width 0.3s ease;
-}
-.box__1:hover::before {
     width: 100%;
-}
-.box__1:hover {
-    color: var(--white);
-}
-.box__2 {
-    line-height: 1.5;
-    padding: 10px 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    border-radius: 20px;
-    color: var(--color-red);
-    cursor: pointer;
-    user-select: none;
+    /* height: 100%; */
+    background-color: white;
+    border-radius: 10px;
     overflow: hidden;
-    transition: color 0.3s ease;
-    background-color: #fff;
-}
-.box__2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background-color: var(--color-red);
-    z-index: -1;
-    transition: width 0.3s ease;
-}
-.box__2:hover::before {
-    width: 100%;
-}
-.box__2:hover {
-    color: var(--white);
 }
 
-/* .study__photo {
+.Study-listing__image-container {
+    width: 100%;
+    height: 100%;
+    /* height: 65%; */
+    overflow: hidden;
+}
+
+.Study-listing__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .Study-listing__details {
+    max-height: 35%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: flex-start;
+    padding: 0px 25px;
+    position: relative;
 } */
-/* .irina_study {
-    height: 80%;
+
+.Study-listing__type {
     position: absolute;
-} */
+    font-size: 0.8rem;
+    right: 10px;
+    top: 10px;
+    background-color: rgb(223, 247, 255);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
 
+.Study-listing__row {
+    margin: 6px 0px;
+    display: flex;
+    align-items: center;
+}
 
+.Study-listing__price {
+    font-size: 1.5rem;
+}
+
+.Study-listing__address {
+    color: #737373;
+}
+
+.overlayCard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: flex;
+    border: 1px solid green;
+}
+
+@media only screen {
+    .overlayCard {
+        overflow-y: scroll;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 0px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .overlayCard {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.modal {
+    min-height: 600px;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+}
+
+.modal__image {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.modal__info {
+    background-color: white;
+    display: flex;
+}
+
+.modal__row {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.modal__info .modal__row h4 {
+    font-weight: 400;
+    color: var(--color-red);
+}
+
+.modal__description-wrapper {
+    margin: 20px 0px;
+    text-align: left;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__description-wrapper p {
+    margin-bottom: 20px;
+}
+
+.modal__price {
+    font-size: 3rem;
+}
+
+.modal__address {
+    font-size: 1.5rem;
+    color: #737373;
+}
+
+.modal__description {
+    color: #737373;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.25rem;
+}
+
+.modal__close-wrapper {
+    all: unset;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal__close-icon {
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen {
+    .modal {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .modal__image {
+        width: 100%;
+    }
+
+    .modal__info {
+        width: calc(100%);
+        height: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal__close-wrapper {
+        right: -20px;
+        top: -30px;
+    }
+
+    .modal__close-icon {
+        width: 35px;
+        height: 35px;
+        color: #cacaca;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    .modal {
+        width: 80%;
+        height: 80%;
+        max-width: 1800px;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        padding: 30px;
+    }
+
+    .modal__image {
+        width: calc(70% - 10px);
+        height: 100%;
+    }
+
+    .modal__info {
+        width: calc(30% - 10px);
+        height: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal__close-wrapper {
+        right: 10px;
+        top: 10px;
+    }
+
+    .modal__close-icon {
+        color: #737373;
+    }
+}
 
 /* ------------------------- Вёрстка блоков ONLINE-обучения ------------------------- */
 .online-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* padding: 50px 180px 110px 180px; */
-    /* width: 100vw; */
+    height: 100%;
     padding: 50px 0px 110px 0px;
     background-color: var(--neutral-light);
     overflow: hidden;
@@ -155,8 +293,6 @@
 li {
     list-style-type: none;
 }
-
-
 
 .Baza {
     min-height: 740px;
@@ -179,7 +315,7 @@ li {
     line-height: 68px;
     margin-bottom: 40px;
     text-transform: uppercase;
-    background: linear-gradient(45deg, #87231e 33%, #C72F05 66%, #87231e);
+    background: linear-gradient(45deg, #87231e 33%, #c72f05 66%, #87231e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #87231e;
@@ -223,7 +359,7 @@ li {
     height: 100%;
     width: 0%;
     /* background-color: var(--color-red); */
-    background: linear-gradient(100deg, #87231e, #C72F05);
+    background: linear-gradient(100deg, #87231e, #c72f05);
     z-index: -1;
     transition: width 0.3s ease;
 }
@@ -238,8 +374,6 @@ li {
     width: 760px;
     border-radius: 50%;
 }
-
-
 
 .ForYou {
     padding-top: 50px;
@@ -281,9 +415,6 @@ li {
 .ForYou-container .ForYou-content p {
     font-size: 20px;
 }
-
-
-
 
 .Result-container {
     width: 100%;
@@ -332,37 +463,6 @@ li {
     color: var(--color-red);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Kak-prohodit {
     margin-top: 35px;
     margin-bottom: 300px;
@@ -377,7 +477,7 @@ li {
     padding-top: 25px;
 
     /* background-color: var(--color-red); */
-    background: linear-gradient(140deg,#87231e, #C72F05);
+    background: linear-gradient(140deg, #87231e, #c72f05);
     width: 65%;
     border-top-right-radius: 250px;
     border-bottom-right-radius: 250px;
@@ -401,7 +501,7 @@ li {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     width: 100%;
     margin-top: 30px;
 }
@@ -430,37 +530,11 @@ li {
     height: 160px;
 }
 
-.Kak-card .fingerprint img{
+.Kak-card .fingerprint img {
     position: relative;
     color: black;
     width: 120px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .FAQs {
     border: 1px solid var(--color-red);
@@ -547,17 +621,6 @@ li {
     transition: all 0.5s ease-in;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .Nabor {
     margin-top: 150px;
     display: flex;
@@ -589,7 +652,6 @@ li {
     margin-bottom: 30px;
     text-align: center;
 }
-
 
 .list-ul,
 .list-li {
@@ -652,36 +714,14 @@ li {
 }
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Okupaemost {
-    border: 1px solid var(--color-red);
-
+    background-color: silver;
     padding-top: 50px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-
 
 .Bonus {
     padding-top: 50px;
@@ -827,35 +867,16 @@ li {
     transition: all 0.5s ease-out;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.Students-container {
+    min-height: 1200px;
+    max-height: 100%;
+}
 
 .Result-Student {
-    border: 1px solid var(--color-red);
-
-    padding-top: 50px;
-    min-height: 500px;
+    padding-top: 30px;
+    height: 100%;
     display: flex;
-    flex-direction: column;    
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 .Result-Student .Result-heading {
     display: flex;
@@ -864,88 +885,111 @@ li {
     align-items: center;
 }
 
-.Result-Student h2 {
+.Result-Student .Result-heading h2 {
     font-size: 45px;
     margin-bottom: 7px;
     width: 100%;
     text-align: center;
 }
-.Result-Student span {
+.Result-Student .Result-heading span {
     margin-top: 35px;
     width: 90px;
     border-top: 2px solid rgb(223, 77, 77);
     display: flex;
-    margin-bottom: 55px;
+    margin-bottom: 15px;
 }
 
-
-.students {
+.Students {
     display: flex;
+    justify-content: center;
+    text-align: center;
+    /* margin: 70px 100px 200px 100px; */
 }
 
+.Students-properties {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    min-height: 900px;
+    max-height: 100%;
+}
 
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 5px;
+}
 
 .Abasheva {
-    border: 1px solid var(--color-red);
-
     padding-top: 50px;
     min-height: 400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.Abasheva div img {
+    width: 500px;
+}
+.Abasheva-text {
+    width: 40%;
+}
 
 .Tarif-Container {
-    border: 1px solid var(--color-red);
-
+    background-color: gray;
     padding-top: 50px;
     min-height: 400px;
     display: flex;
     justify-content: center;
 }
 .Tarif {
-    border: 1px solid var(--color-red);
-
+    background-color: silver;
     padding-top: 50px;
     min-height: 400px;
     display: flex;
     justify-content: center;
 }
 
-
-
-
-
 /* ------------------------- Вёрстка блоков OFFLINE-обучения ------------------------- */
 
-.offline-container {
+.Offline {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    margin: 20px 120px 20px 120px;
+    text-align: center;
+    margin: 100px 100px 300px 100px;
 }
-.offline-container div {
-    margin-bottom: 30px;
+
+.properties {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    height: 500px;
 }
-.Gubi {
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 5px;
+}
+
+/* .Gubi {
     background-color: rgba(0, 0, 0, 0.1);
 }
 .Brovi {
@@ -956,4 +1000,4 @@ li {
 }
 .Remove {
     background-color: rgba(0, 0, 0, 0.4);
-}
+} */

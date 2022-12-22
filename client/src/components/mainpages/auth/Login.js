@@ -1,6 +1,19 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import {motion} from 'framer-motion'
+
+const textAnimation = {
+    hidden: {
+        y: -200,
+        opacity: 0,
+    },
+    visible: (custom) => ({
+        y: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2},
+    }),
+}
 
 function Login() {
     const [user, setUser] = useState({
@@ -27,7 +40,7 @@ function Login() {
     }
 
     return (
-        <div className="login-page">
+        <motion.div custom={1} variants={textAnimation} className="login-page">
             <form onSubmit={loginSubmit}>
                 <h2>Вход</h2>
                 <input
@@ -56,7 +69,7 @@ function Login() {
                     <Link to="/register">Регистрация</Link>
                 </div>
             </form>
-        </div>
+        </motion.div>
     )
 }
 

@@ -6,6 +6,8 @@ const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
+const fileRouter = require("./routes/file")
+
 
 const app = express()
 app.use(express.json())

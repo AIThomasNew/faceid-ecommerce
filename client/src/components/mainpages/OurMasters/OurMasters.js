@@ -91,14 +91,14 @@ const OurMasters = () => {
                                 <li>Волоски: Коррекция <span>3000р</span></li>
                             </ul>
                         </div>
-                        <img className="imageMasters" src={masterIrina} />
+                        <img className="imageMasters" src={masterIrina} alt='' />
                     </motion.div>
 
                     <motion.div custom={2} variants={textAnimationRight} className="OurMasters__card-Master">
                         <div className="OurMasters__card-Masters-content">
                             <h2>Администратор: Анастасия</h2>
                         </div>
-                        <img className="imageMasters" src={masterNasty} />
+                        <img className="imageMasters" src={masterNasty}  alt='' />
                     </motion.div>
                 </div>
 
@@ -114,7 +114,7 @@ const OurMasters = () => {
                             </ul>
                         </div>
 
-                        <img className="imageMasters" src={masterAnna} />
+                        <img className="imageMasters" src={masterAnna} alt=''  />
                     </motion.div>
 
                     <motion.div custom={3} variants={textAnimationRight} className="OurMasters__card-Master">
@@ -131,7 +131,7 @@ const OurMasters = () => {
                                 <li>Удаление тату от <span>500р</span></li>
                             </ul>
                         </div>
-                        <img className="imageMasters" src={masterStefania} />
+                        <img className="imageMasters" src={masterStefania} alt=''  />
                     </motion.div>
                 </div>
 
@@ -176,7 +176,7 @@ const OurMasters = () => {
                                 </button>
                             </div>
                         </div>
-                        <img className="imageMasters" src={masterLilia} />
+                        <img className="imageMasters" src={masterLilia}  alt='' />
                     </motion.div>
                 </motion.div>
             </div>

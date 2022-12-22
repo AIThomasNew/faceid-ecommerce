@@ -3,7 +3,7 @@ import './AboutUs.css'
 import imagesVertical from './imagesV'
 import imageHorizontal from './imagesH'
 import {motion} from 'framer-motion'
-import {GiDiamondTrophy} from 'react-icons/gi'
+import {BsCheckLg} from 'react-icons/bs'
 import VanillaTilt from 'vanilla-tilt'
 
 function Tilt(props) {
@@ -14,6 +14,10 @@ function Tilt(props) {
     }, [options])
     return <div ref={tilt} {...rest} />
 }
+
+
+
+
 const textAnimation = {
     hidden: {
         y: -200,
@@ -25,6 +29,8 @@ const textAnimation = {
         transition: {delay: custom * 0.2},
     }),
 }
+
+
 const textAnimationLeft = {
     hidden: {
         x: -400,
@@ -36,6 +42,20 @@ const textAnimationLeft = {
         transition: {delay: custom * 0.2},
     }),
 }
+
+const textAnimationRight = {
+    hidden: {
+        x: 400,
+        opacity: 0,
+    },
+    visible: (custom) => ({
+        x: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2},
+    }),
+}
+
+
 
 const AboutUs = () => {
     const options = {
@@ -75,7 +95,7 @@ const AboutUs = () => {
 
                 <div className="aboutus__main">
                     <motion.div className="app__aboutus-content_about">
-                        <motion.div custom={2} variants={textAnimation} className="tilt-block">
+                        <motion.div custom={2} variants={textAnimationLeft} className="tilt-block">
                             <Tilt className="tilt" options={options}>
                                 <h1 className="headtext__cormorant__mini">
                                     Основатель Центра перманентного макияжа «FACE ID» в городе Перми
@@ -83,7 +103,7 @@ const AboutUs = () => {
                             </Tilt>
                         </motion.div>
 
-                        <motion.div custom={2} variants={textAnimation} className="tilt-block">
+                        <motion.div custom={2} variants={textAnimationRight} className="tilt-block">
                             <Tilt className="tilt" options={options}>
                                 <h1 className="headtext__cormorant__mini">
                                     Сертифицированный тренер-преподаватель международного уровня
@@ -92,29 +112,12 @@ const AboutUs = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* <motion.div custom={2} variants={textAnimation} className="app__aboutus-content_about"> */}
-                    {/* <h1 className="headtext__cormorant__mini"> */}
-                    {/* Основатель Центра перманентного макияжа "FACE ID" в городе Перми */}
-                    {/* </h1> */}
-                    {/* <h1 className="headtext__cormorant__mini">Основатель Центра перманентного </h1> */}
-                    {/* <h1 className="headtext__cormorant__mini-blue">макияжа "FACE ID" в городе Перми</h1> */}
-                    {/* </motion.div> */}
-
-                    {/* <motion.div custom={2} variants={textAnimationLeft} className="app__aboutus-content_about"> */}
-                    {/* <h2 className="headtext__cormorant__mini">
-                                        Сертифицированный тренер-преподаватель международного уровня
-                                    </h2> */}
-                    {/* <h2 className="headtext__cormorant__mini-blue"> */}
-                    {/* Сертифицированный тренер-преподаватель международного уровня */}
-                    {/* </h2> */}
-                    {/* </motion.div> */}
-
                     <div className="achievements">
                         <ul className="p__opensans">
                             <motion.div custom={4} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     1 место номинация "Губы" Профи г.Оренбург, 2022
                                 </li>
@@ -122,7 +125,7 @@ const AboutUs = () => {
                             <motion.div custom={6} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     Гран-при extra "Permanent", Perm 2019
                                 </li>
@@ -130,7 +133,7 @@ const AboutUs = () => {
                             <motion.div custom={8} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     Extra Permanent Лучший ПМ бровей по мнению судьи, октябрь 2019 г, Perm
                                 </li>
@@ -138,7 +141,7 @@ const AboutUs = () => {
                             <motion.div custom={10} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     3 место Профи ПМ губ в технике "Акварель", Perm 2019
                                 </li>
@@ -146,7 +149,7 @@ const AboutUs = () => {
                             <motion.div custom={12} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     "Лучшие веки" на чемпионате "EXTRA PERMANENT" Perm 2019
                                 </li>
@@ -154,7 +157,7 @@ const AboutUs = () => {
                             <motion.div custom={14} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
-                                        <GiDiamondTrophy />
+                                        <BsCheckLg />
                                     </div>{' '}
                                     3 место Профи ПМ бровей в технике "Напыление", Пермь 2019
                                 </li>
@@ -172,7 +175,7 @@ const AboutUs = () => {
                             Регалии и дипломы
                         </motion.h1>
 
-                        <motion.div custom={2} variants={textAnimation} ref={carousel} className="carousel">
+                        <motion.div custom={2} variants={textAnimationRight} ref={carousel} className="carousel">
                             <motion.div
                                 drag="x"
                                 dragConstraints={{right: 100, left: -width}}
@@ -189,7 +192,7 @@ const AboutUs = () => {
                             </motion.div>
                         </motion.div>
 
-                        <motion.div custom={3} variants={textAnimation} ref={carousel2} className="carousel-2">
+                        <motion.div custom={3} variants={textAnimationLeft} ref={carousel2} className="carousel-2">
                             <motion.div
                                 drag="x"
                                 dragConstraints={{right: 100, left: -width2}}

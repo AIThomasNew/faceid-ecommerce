@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import './OurServices.css'
 
-// Фото
 import voloski from './img/voloski.jpg'
 import gub from './img/gub.jpg'
 import strelochka from './img/strelochka.jpg'
@@ -12,10 +11,10 @@ import classicstrelka from './img/classicstrelka.jpg'
 import pudrnapilenie from './img/pudrnapilenie.jpg'
 import laminirovanieresnic from './img/laminirovanieresnic.jpg'
 import deletepm from './img/deletepm.jpg'
-// import 'assets/faceid.png'
 import faceidlogo from '../../../assets/faceid.png'
 
-// Framer Motion
+
+
 const textAnimationUp = {
     hidden: {
         y: -200,

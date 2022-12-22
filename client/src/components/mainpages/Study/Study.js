@@ -1,40 +1,54 @@
 import React from 'react'
-import {motion} from 'framer-motion'
-import {NavLink} from 'react-router-dom'
 import './Study.css'
+import LinkOnline from './LinksStudies/LinkOnline/LinkOnline'
+import LinkOffline from './LinksStudies/LinkOffline/LinkOffline'
 
-const textAnimationDown = {
-    hidden: {
-        x: 0,
-        y: 0,
-        scale: 0,
-        rotate: 0,
-    },
-    visible: {
-        x: 0,
-        y: 0,
-        scale: 1,
-        rotate: 0,
-    },
-}
+// const textAnimationLeft = {
+//     hidden: {
+//         x: -400,
+//         opacity: 0,
+//     },
+//     visible: (custom) => ({
+//         x: 0,
+//         opacity: 1,
+//         transition: {delay: custom * 0.2},
+//     }),
+// }
 
+// const textAnimationRight = {
+//     hidden: {
+//         x: 400,
+//         opacity: 0,
+//     },
+//     visible: (custom) => ({
+//         x: 0,
+//         opacity: 1,
+//         transition: {delay: custom * 0.2},
+//     }),
+// }
 
+// const options = {
+//     scale: 1.3,
+//     speed: 200,
+//     max: 25,
+//     glare: true,
+// }
 
+// initial="hidden"
+//             whileInView="visible"
+//             viewport={{amount: 0.1, once: true}}
+//             className="app__aboutus  section__padding"
+//             id="about"
+
+// custom={2} variants={textAnimationLeft}
+// custom={2} variants={textAnimationRight}
 
 const Study = () => {
     return (
-        <motion.div initial="hidden" whileInView="visible" variants={textAnimationDown} className="Study" id="study">
-            <div className="study__content">
-                <div className="study__cards-courses">
-                    <NavLink to="/online" className="box box__1">
-                        <p>ONLINE ОБУЧЕНИЕ</p>
-                    </NavLink>
-                    <NavLink to="/offline" className="box box__2">
-                        <p>ОЧНОЕ ОБУЧЕНИЕ</p>
-                    </NavLink>
-                </div>
-            </div>
-        </motion.div>
+        <div className="Study">
+            <LinkOnline />
+            <LinkOffline />
+        </div>
     )
 }
 

@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import './Study.css'
+import React, {useEffect} from 'react'
 import {useLocation} from 'react-router-dom'
+import './Study.css'
+
 import FAQs from './FAQs/FAQs'
 import Baza from './Baza/Baza'
 import Bonus from './Bonus/Bonus'
@@ -12,6 +13,7 @@ import Nabor from './Nabor/Nabor'
 import Okupaemost from './Okupaemost/Okupaemost'
 import Abasheva from './Abasheva/Abasheva'
 import Tarif from './Tarif/Tarif'
+
 
 const Online = () => {
     const {pathname} = useLocation()
@@ -39,6 +41,7 @@ const Online = () => {
 }
 
 export default Online
+
 // ТЕЗИСЫ МЕЖДУ БЛОКАМИ
 // От нуля к профессии за 10 дней
 // Обучение - Практика - Результат - Поддержка
