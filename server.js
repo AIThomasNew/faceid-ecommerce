@@ -6,8 +6,6 @@ const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
-const fileRouter = require("./routes/file")
-
 
 const app = express()
 app.use(express.json())
@@ -20,7 +18,6 @@ app.use(
 )
 
 
-// Роутинг
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))

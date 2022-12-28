@@ -959,7 +959,7 @@ li {
     justify-content: center;
 }
 
-/* ------------------------- Вёрстка блоков OFFLINE-обучения ------------------------- */
+/* OFFLINE-обучения ------------ */
 
 .Offline {
     display: flex;
@@ -988,16 +988,3 @@ li {
     background-color: #cacaca;
     border-radius: 5px;
 }
-
-/* .Gubi {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-.Brovi {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-.Strelka {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-.Remove {
-    background-color: rgba(0, 0, 0, 0.4);
-} */
