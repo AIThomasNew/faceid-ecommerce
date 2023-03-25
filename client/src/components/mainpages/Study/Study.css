@@ -1,5 +1,3 @@
-/* ======================================================================================================= */
-
 .Study {
     display: flex;
     flex-direction: row;
@@ -23,7 +21,6 @@
     width: 5px;
     background-color: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #cacaca;
     border-radius: 5px;
@@ -34,14 +31,19 @@
     min-width: 400px;
     /* min-width: 100%; */
     max-width: 700px;
-    height: 450px;
+    /* height: 450px; */
+    /* height: 100%; */
     position: relative;
     margin: 20px;
     cursor: pointer;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     background-color: white;
+    background: transparent;
     border-radius: 10px;
     overflow: hidden;
+    /* z-index: -100; */
+    
+
 }
 
 .Study-listing::before {
@@ -57,8 +59,9 @@
     width: 100%;
     /* height: 100%; */
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
+
 }
 
 .Study-listing__image-container {
@@ -74,7 +77,8 @@
     object-fit: cover;
 }
 
-/* .Study-listing__details {
+/* 
+.Study-listing__details {
     max-height: 35%;
     display: flex;
     flex-direction: column;
@@ -82,7 +86,8 @@
     align-items: flex-start;
     padding: 0px 25px;
     position: relative;
-} */
+} 
+*/
 
 .Study-listing__type {
     position: absolute;
@@ -117,8 +122,11 @@
     background: rgba(0, 0, 0, 0.6);
     z-index: 100;
     display: flex;
-    border: 1px solid green;
 }
+
+
+
+/* АДАПТИВНОСТЬ РАЗДЕЛА */
 
 @media only screen {
     .overlayCard {
@@ -129,12 +137,139 @@
     }
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (max-width: 1500px) {
+    .Study-properties {
+        width: 100%;
+        height: 500px;
+    }
+    .Study-listing {
+        width: 100%;
+        min-width: 400px;
+        max-width: 700px;
+        position: relative;
+        margin: 20px;
+        cursor: pointer;
+        background: transparent;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .Study-listing__content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+    
+    }
+    .Study-listing__image-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .Study {
+        padding: 90px 45px;
+        height: 700px;
+    }
+    .Study-properties {
+        width: 100%;
+        height: 500px;
+    }
     .overlayCard {
         justify-content: center;
         align-items: center;
     }
 }
+
+@media screen and (max-width: 970px) {
+    .Study {
+        padding: 90px 45px;
+        height: 500px;
+    }
+    .Study-properties {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Study {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 90px 45px;
+        height: 100%;
+    }
+    .Study-properties {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 550px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Study {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 90px 45px;
+        height: 100%;
+    }
+    .Study-properties {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .Study {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 90px 45px;
+        height: 100%;
+    }
+    .Study-properties {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Модальное окно */
 
 .modal {
     min-height: 600px;
@@ -154,6 +289,10 @@
     background-color: white;
     display: flex;
 }
+.modal__info2 {
+    background-color: white;
+    display: flex;
+}
 
 .modal__row {
     margin: 20px 0px;
@@ -161,10 +300,22 @@
     align-items: center;
     text-align: left;
 }
+.modal__row2 {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
 
 .modal__info .modal__row h4 {
-    font-weight: 400;
+    font-size: 23px;
+    font-weight: 600;
     color: var(--color-red);
+}
+.modal__info2 .modal__row2 {
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--color-blue);
 }
 
 .modal__description-wrapper {
@@ -183,9 +334,13 @@
     font-size: 3rem;
 }
 
-.modal__address {
-    font-size: 1.5rem;
-    color: #737373;
+.modal__row .modal__address {
+    /* font-size: 1.5rem; */
+    color: var(--color-red);
+}
+.modal__address2 {
+    font-size: 40px;
+    color: var(--color-blue);
 }
 
 .modal__description {
@@ -221,6 +376,13 @@
     }
 
     .modal__info {
+        width: calc(100%);
+        height: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .modal__info2 {
         width: calc(100%);
         height: 100%;
         padding: 20px;
@@ -263,6 +425,13 @@
         flex-direction: column;
         align-items: flex-start;
     }
+    .modal__info2 {
+        width: calc(30% - 10px);
+        height: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     .modal__close-wrapper {
         right: 10px;
@@ -274,7 +443,20 @@
     }
 }
 
-/* ------------------------- Вёрстка блоков ONLINE-обучения ------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Блок ONLINE-обучения */
 .online-container {
     display: flex;
     flex-direction: column;
@@ -293,7 +475,6 @@
 li {
     list-style-type: none;
 }
-
 .Baza {
     min-height: 740px;
     display: flex;
@@ -321,9 +502,6 @@ li {
     color: #87231e;
     display: table;
 }
-/* .Baza-heading span {
-    color: var(--color-red);
-} */
 .Baza-heading p {
     font-size: 22px;
     line-height: 37px;
@@ -369,15 +547,304 @@ li {
 .Button-start:hover {
     color: #fff;
 }
+.Baza-image {
+    margin-right: 30px;
+    width: 100%;
+}
 .Baza-image img {
     margin-top: 10px;
-    width: 760px;
+    width: 100%;
     border-radius: 50%;
 }
 
+
+
+/* АДАПТИВНОСТЬ БАЗЫ ----------------------------------------- */
+
+@media screen and (max-width: 1700px) {
+
+    .Baza {
+        min-height: 680px;
+    }
+    .Baza-content {
+        margin-top: 110px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .Baza-heading {
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 50px;
+        line-height: 55px;
+    }
+    .Baza-heading p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: -15px;
+        margin-bottom: -10px;
+    }
+    .Baza-image {
+        margin-right: 25px;
+        width: 100%;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .Button-start {
+        margin-top: 38px;
+        width: 220px;
+        height: 60px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 1500px) {
+    .padding-class {
+        padding: 0px 150px 0px 150px;
+    }
+    .Baza {
+        min-height: 600px;
+    }
+    .Baza-content {
+        margin-top: 70px;
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 45px;
+        line-height: 48px;
+    }
+    .Baza-heading p {
+        font-size: 16px;
+        line-height: 27px;
+        margin-top: -17px;
+        margin-bottom: -7px;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 180px;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .online-container {
+        padding: 40px 0px 110px 0px;
+    }
+    .padding-class {
+        padding: 0px 120px 0px 120px;
+    }
+    .Baza {
+        min-height: 500px;
+    }
+    .Baza-content {
+        margin-top: 50px;
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .Baza-heading p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .Baza-image {
+        margin-right: 10px;
+        width: 100%;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 12px;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 150px;
+        height: 45px;
+        border-radius: 12px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .online-container {
+        padding: 36px 0px 110px 0px;
+    }
+    .padding-class {
+        padding: 0px 100px 0px 100px;
+    }
+    .Baza {
+        min-height: 460px;
+    }
+    .Baza-content {
+        margin-top: 40px;
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    .Baza-heading p {
+        font-size: 11px;
+        line-height: 18px;
+    }
+    .Baza-image {
+        margin-right: 10px;
+        width: 100%;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 170px;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    .online-container {
+        padding: 33px 0px 110px 0px;
+    }
+    .padding-class {
+        padding: 0px 80px 0px 80px;
+    }
+    .Baza {
+        min-height: 350px;
+    }
+    .Baza-content {
+        margin-top: 40px;
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .Baza-heading p {
+        font-size: 10px;
+        line-height: 16px;
+        margin-top: -20px;
+        margin-bottom: -7px;
+    }
+    .Baza-image {
+        /* margin-right: 10px; */
+        width: 100%;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 130px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .online-container {
+        padding: 30px 0px 110px 0px;
+    }
+    .padding-class {
+        padding: 0px 60px 0px 60px;
+    }
+    .Baza {
+        min-height: 300px;
+    }
+    .Baza-content {
+        margin-top: 25px;
+        width: 100%;
+    }
+    .Baza-heading h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .Baza-heading p {
+        font-size: 8px;
+        line-height: 14px;
+        margin-top: -25px;
+        margin-bottom: -7px;
+    }
+    .Baza-image {
+        /* margin-right: 10px; */
+        width: 100%;
+    }
+    .Baza-image img {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 110px;
+        height: 35px;
+        border-radius: 12px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .online-container {
+        padding: 30px 0px 110px 0px;
+    }
+    .padding-class {
+        padding: 0px 60px 0px 60px;
+    }
+    .Baza {
+        min-height: 200px;
+        display: block;
+    }
+    .Baza-heading h1 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .Baza-heading p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: -25px;
+        margin-bottom: -7px;
+    }
+    .Baza-image img {
+        display: none;
+    }
+    .Button-start {
+        margin-top: 32px;
+        width: 130px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .ForYou {
     padding-top: 50px;
-    min-height: 850px;
+    min-height: 890px;
     display: flex;
     justify-content: center;
 }
@@ -386,7 +853,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid silver; */
 }
 .ForYou-container .ForYou-content {
     width: 100%;
@@ -412,16 +878,303 @@ li {
     display: flex;
     margin-bottom: 40px;
 }
-.ForYou-container .ForYou-content p {
-    font-size: 20px;
+
+
+/* АДАПТИВНОСТЬ ДЛЯ ТЕБЯ */
+@media screen and (max-width: 1700px) {
+    .ForYou {
+        padding-top: 50px;
+        min-height: 850px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 60px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 33px;
+        margin-bottom: 30px;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 17px;
+        line-height: 35px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 500px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 35px;
+        width: 85px;
+        display: flex;
+        margin-bottom: 35px;
+    }
 }
+
+@media screen and (max-width: 1500px) {
+
+    .ForYou {
+        padding-top: 50px;
+        min-height: 790px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 15px;
+        line-height: 32px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 450px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 30px;
+        width: 85px;
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width: 1150px) {
+
+    .ForYou {
+        padding-top: 50px;
+        min-height: 750px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 25px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 350px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 30px;
+        width: 79px;
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media screen and (max-width: 970px) {
+
+    .ForYou {
+        padding-top: 40px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 300px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 15px;
+        width: 70px;
+        display: flex;
+        margin-bottom: 15px;
+        border-top: 1px solid rgb(223, 77, 77);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ForYou {
+        padding-top: 35px;
+        min-height: 500px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 230px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 15px;
+        width: 70px;
+        display: flex;
+        margin-bottom: 15px;
+        border-top: 1px solid rgb(223, 77, 77);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .ForYou {
+        padding-top: 30px;
+        min-height: 450px;
+        display: flex;
+        justify-content: center;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 50px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 14px;
+        margin-bottom: 14px;
+        font-weight: 700;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 230px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 15px;
+        width: 70px;
+        display: flex;
+        margin-bottom: 15px;
+        border-top: 1px solid rgb(223, 77, 77);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ForYou {
+        padding-top: 30px;
+        min-height: 450px;
+    }
+    .ForYou-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ForYou-container .ForYou-content {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .ForYou-container .ForYou-content h2 {
+        font-size: 14px;
+        margin-bottom: 14px;
+        font-weight: 700;
+    }
+    .ForYou-container .ForYou-content ul li {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+    }
+    .ForYou-image img {
+        margin-top: 10px;
+        width: 230px;
+    }
+    .ForYou-container .ForYou-content span {
+        margin-top: 15px;
+        width: 70px;
+        margin-bottom: 15px;
+        border-top: 1px solid rgb(223, 77, 77);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Result-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: var(--color-red); */
 }
 .Result-Learning {
     padding-top: 50px;
@@ -448,9 +1201,6 @@ li {
     width: 100%;
     margin-right: 70px;
 }
-/* .Result-content {
-    border: 2px solid silver;
-} */
 .Result-content ul li {
     display: flex;
     line-height: 28px;
@@ -463,6 +1213,211 @@ li {
     color: var(--color-red);
 }
 
+
+
+/* ----------------------------------- */
+/* АДАПТИВНОСТЬ РЕЗУЛЬТАТОВ ОБУЧЕНИЯ */
+@media screen and (max-width: 1700px) {
+    
+    .Result-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .Result-Learning {
+        padding-top: 45px;
+        /* min-height: 750px; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .Result-container .Result-content span {
+        margin-top: 30px;
+        width: 90px;
+        border-top: 2px solid rgb(223, 77, 77);
+        display: flex;
+        margin-bottom: 40px;
+    }
+    .Result-Learning h2 {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .Result-Learning ul li {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .Result-Learning .Result-content {
+        width: 100%;
+        margin-right: 70px;
+        height: 570px;
+    }
+    .Result-content ul li {
+        display: flex;
+        line-height: 28px;
+        margin-bottom: 7px;
+    }
+    .Result-content ul li div {
+        padding-top: 4px;
+        margin-right: 14px;
+        height: 20px;
+        color: var(--color-red);
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .Result-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .Result-Learning {
+        padding-top: 45px;
+        /* min-height: 750px; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .Result-container .Result-content span {
+        margin-top: 30px;
+        width: 90px;
+        border-top: 2px solid rgb(223, 77, 77);
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .Result-Learning h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .Result-Learning ul li {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .Result-Learning .Result-content {
+        width: 100%;
+        margin-right: 70px;
+        height: 570px;
+    }
+    .Result-content ul li {
+        display: flex;
+        line-height: 28px;
+        margin-bottom: 7px;
+    }
+    .Result-content ul li div {
+        padding-top: 4px;
+        margin-right: 14px;
+        height: 15px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .Result-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .Result-Learning {
+        padding-top: 45px;
+        height: 100%;
+    }
+    .Result-container .Result-content span {
+        margin-top: 20px;
+        width: 90px;
+        border-top: 1px solid rgb(223, 77, 77);
+        margin-bottom: 18px;
+    }
+    .Result-Learning h2 {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+    .Result-Learning ul li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .Result-Learning .Result-content {
+        width: 100%;
+        margin-right: 70px;
+        height: 570px;
+    }
+    .Result-content ul li {
+        display: flex;
+        line-height: 20px;
+        margin-bottom: 7px;
+    }
+    .Result-content ul li div {
+        padding-top: 4px;
+        margin-right: 14px;
+        height: 10px;
+    }
+    .Result-virtual {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .Result-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Result-Learning {
+        padding-top: 5px;
+        height: 840px;
+        margin-bottom: 20px;
+    }
+    .Result-container .Result-content span {
+        margin-top: 20px;
+        width: 90px;
+        margin-bottom: 18px;
+    }
+    .Result-Learning h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .Result-Learning ul li {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .Result-Learning .Result-content {
+        width: 100%;
+        margin-right: 70px;
+        height: 570px;
+    }
+    .Result-content ul li {
+        display: flex;
+        line-height: 20px;
+        margin-bottom: 7px;
+    }
+    .Result-content ul li div {
+        padding-top: 4px;
+        margin-right: 14px;
+        height: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 .Kak-prohodit {
     margin-top: 35px;
     margin-bottom: 300px;
@@ -470,19 +1425,16 @@ li {
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    /* flex-direction: column; */
 }
 .Kak-wrapper {
     color: #fff;
     padding-top: 25px;
 
-    /* background-color: var(--color-red); */
     background: linear-gradient(140deg, #87231e, #c72f05);
     width: 65%;
     border-top-right-radius: 250px;
     border-bottom-right-radius: 250px;
     height: 500px;
-    /* border: 1px solid var(--color-red); */
 }
 .Kak-content {
     width: 100%;
@@ -535,6 +1487,294 @@ li {
     color: black;
     width: 120px;
 }
+
+
+/* АДАПТИВНОСТЬ КАК ПРОХОДИТ ОБУЧЕНИЕ */
+@media screen and (max-width: 1700px) {
+
+    .Kak-prohodit {
+        margin-top: 35px;
+        margin-bottom: 280px;
+        height: 630px;
+    }
+    .Kak-wrapper {
+        padding-top: 25px;
+        width: 60%;
+        border-top-right-radius: 250px;
+        border-bottom-right-radius: 250px;
+        height: 370px;
+
+    }
+    .Kak-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 50px;
+        padding-top: 15px;
+    }
+    .Kak-content h2 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .Kak-card {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .Kak-image {
+        margin-top: 250px;
+    }
+    .Kak-image img {
+        height: 700px;
+    }
+    
+    .Kak-card div h3 {
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .Kak-card div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 140px;
+        height: 100%;
+        margin: 40px 14px 14px 14px;
+    }
+    .Kak-card .fingerprint {
+        height: 120px;
+    }
+    
+    .Kak-card .fingerprint img {
+        position: relative;
+        color: black;
+        width: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1150px) {
+    .Kak-prohodit {
+        margin-top: 35px;
+        margin-bottom: 280px;
+        height: 470px;
+    }
+    .Kak-wrapper {
+        padding-top: 25px;
+        width: 85%;
+        border-top-right-radius: 250px;
+        border-bottom-right-radius: 250px;
+        height: 370px;
+
+    }
+    .Kak-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 50px;
+        padding-top: 15px;
+    }
+    .Kak-content h2 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .Kak-card {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .Kak-image {
+        margin-top: 250px;
+    }
+    .Kak-image img {
+        height: 450px;
+    }
+    
+    .Kak-card div h3 {
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .Kak-card div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 140px;
+        height: 100%;
+        margin: 40px 14px 14px 14px;
+    }
+    .Kak-card .fingerprint {
+        height: 120px;
+    }
+    
+    .Kak-card .fingerprint img {
+        position: relative;
+        color: black;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Kak-wrapper {
+        padding-top: 25px;
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        height: 320px;
+        /* height: 100%; */
+    }
+
+    .Kak-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 50px;
+        padding-top: 10px;
+    }
+    .Kak-content h2 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .Kak-prohodit {
+        margin-top: 25px;
+        margin-bottom: 280px;
+        height: 400px;
+    }
+    .Kak-card {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 25px;
+    }
+
+
+    .Kak-card div {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 110px;
+        height: 100%;
+        margin: 40px 14px 14px 14px;
+    }
+    .Kak-card .fingerprint {
+        height: 75px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Kak-card .fingerprint img {
+        position: relative;
+        color: black;
+        width: 60px;
+    }
+    .Kak-image {
+        margin-top: 250px;
+    }
+    .Kak-image img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .Kak-wrapper {
+        padding-top: 25px;
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Kak-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .Kak-content h2 {
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .Kak-prohodit {
+        margin-top: 25px;
+        margin-bottom: 280px;
+        height: 1200px;
+    }
+    .Kak-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 25px;
+    }
+
+    .Kak-card div {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 110px;
+        height: 100%;
+        margin: 40px 14px 14px 14px;
+    }
+    .Kak-card .fingerprint {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Kak-card .fingerprint img {
+        position: relative;
+        color: black;
+        width: 80px;
+    }
+    .Kak-image {
+        margin-top: 250px;
+    }
+    .Kak-image img {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ПРОГРАММА ОБУЧЕНИЯ */
 
 .FAQs {
     border: 1px solid var(--color-red);
@@ -619,7 +1859,48 @@ li {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     transition: all 0.5s ease-in;
+    line-height: 26px;
+    font-weight: 600;
+    font-size: 20px;
 }
+.faq .minus ul {
+    margin-bottom: 70px;
+}
+.faq .minus h4 {
+    margin-top: 25px;
+    font-weight: 400;
+    margin-bottom: 26px;
+    font-size: 22px;
+}
+
+/* АДАПТИВНОСТЬ УРОКИ */
+@media screen and (max-width: 1700px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* НАБОР */
 
 .Nabor {
     margin-top: 150px;
@@ -629,6 +1910,7 @@ li {
     align-items: center;
     /* min-height: 500px; */
     height: 100%;
+    min-height: 800px;
 }
 
 .Nabor span {
@@ -640,6 +1922,7 @@ li {
 }
 
 .Nabor .Text {
+    margin-top: 45px;
     font-size: 20px;
     width: 50%;
     display: flex;
@@ -647,8 +1930,11 @@ li {
     justify-content: center;
     align-items: center;
 }
+.Nabor .Text p {
+    margin-left: 20px;
+}
 .Nabor .Text h4 {
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -714,17 +2000,132 @@ li {
 }
  */
 
+/* АДАПТИВНОСТЬ НАБОР */
+@media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ОКУПАЕМОСТЬ */
+
 .Okupaemost {
-    background-color: silver;
-    padding-top: 50px;
-    min-height: 400px;
+    margin-top: 250px;
+    height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+.Okupaemost-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Okupaemost-container h4 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+.Okupaemost-container span {
+    margin-top: 25px;
+    width: 90px;
+    border-top: 2px solid rgb(223, 77, 77);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+
+
+.Okupaemost-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Okupaemost-content div {
+    width: 800px;
+    border-radius: 25px;
+    border: 0.5px solid rgb(250, 250, 250);
+    margin: 0 20px 50px 20px;
+    padding: 30px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.07);
+}
+.Okupaemost-content div:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+}
+
+.Okupaemost-content h5 {
+    font-size: 25px;
+    margin: 20px 0 20px 0;
+}
+.Okupaemost-content ul li {
+    font-size: 21px;
+}
+
+
+/* АДАПТИВНОСТЬ ОКУПАЕМОСТЬ */
+@media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Bonus {
-    padding-top: 50px;
+    margin-top: 200px;
     min-height: 850px;
     display: flex;
     justify-content: center;
@@ -867,6 +2268,38 @@ li {
     transition: all 0.5s ease-out;
 }
 
+/* АДАПТИВНОСТЬ БОНУСЫ */
+@media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .Students-container {
     min-height: 1200px;
     max-height: 100%;
@@ -922,11 +2355,26 @@ li {
     width: 5px;
     background-color: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #cacaca;
     border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Abasheva {
     padding-top: 50px;
@@ -936,13 +2384,49 @@ li {
     justify-content: center;
     align-items: center;
 }
-
 .Abasheva div img {
-    width: 500px;
+    width: 600px;
 }
 .Abasheva-text {
-    width: 40%;
+    width: 35%;
+    margin-left: 60px;
 }
+.Abasheva-text h2 {
+    font-size: 43px;
+    margin-bottom: 25px;
+}
+.Abasheva-text p {
+    font-size: 28px;
+}
+
+/* АДАПТИВНОСТЬ СТУДЕНТКИ И АБАШЕВА */
+/* @media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Tarif-Container {
     background-color: gray;
@@ -959,15 +2443,28 @@ li {
     justify-content: center;
 }
 
+.pricing__plan__content__actions img {
+    width: 40px;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
 /* OFFLINE-обучения ------------ */
 
 .Offline {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 100px 100px 300px 100px;
+    margin: 50px 100px 300px 100px;
+    height: 1200px;
 }
-
 .properties {
     display: flex;
     flex-direction: row;
@@ -977,7 +2474,74 @@ li {
     justify-content: center;
     width: 90%;
     height: 500px;
+    
 }
+
+@media screen and (max-width: 1700px) {
+    .Offline {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 50px 100px 300px 100px;
+        height: 2400px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .Offline {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 50px 100px 300px 100px;
+        height: 2400px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Offline {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 50px 100px 300px 100px;
+        height: 1750px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .Offline {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 50px 100px 300px 100px;
+        height: 1350px;
+    }
+}
+
+
+/* .Offline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 45px;
+}
+
+.properties {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    height: 450px;
+} */
+
+
+
+
+
+
+
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -988,3 +2552,20 @@ li {
     background-color: #cacaca;
     border-radius: 5px;
 }
+
+/* АДАПТИВНОСТЬ ТАРИФОВ */
+/* @media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 350px) {
+
+} */

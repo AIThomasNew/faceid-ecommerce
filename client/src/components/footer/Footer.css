@@ -2,12 +2,10 @@
     width: 100%;
     position: relative;
     z-index: 1;
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
     background: var(--color-black);
     padding-top: 0;
 }
@@ -17,7 +15,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
     margin-top: 5rem;
     padding: 0 2rem;
 }
@@ -80,6 +77,8 @@
 .footer__copyright {
     margin-top: 3rem;
 }
+
+/* адаптивность */
 
 @media screen and (min-width: 2000px) {
     .app__footer-headtext {

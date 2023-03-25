@@ -5,20 +5,19 @@ import Listing from './Listing'
 import Overlay from './Overlay'
 import Modal from './Modal'
 
+
+
+
+
 const Card = ({data}) => {
     const [open, setOpen] = useState(false)
-
-    const openModal = () => {
-        setOpen(true)
-    }
-
-    const closeModal = () => {
-        setOpen(false)
-    }
+    const openModal = () => setOpen(true)
+    const closeModal = () => setOpen(false)
 
     return (
         <>
             <Listing data={data} open={openModal} />
+            
             <AnimatePresence>
                 {open && (
                     <Overlay close={closeModal}>
@@ -29,5 +28,4 @@ const Card = ({data}) => {
         </>
     )
 }
-
 export default Card

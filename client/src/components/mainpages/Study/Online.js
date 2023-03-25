@@ -24,17 +24,17 @@ const Online = () => {
     return (
         <div className="online-container">
             <div>
-                <Baza />
-                <ForYou />
-                <ResultLearning />
-                <KakProhodit />
-                <FAQs />
-                <Nabor />
-                <Okupaemost />
-                <Bonus />
-                <Students />
-                <Abasheva />
-                <Tarif />
+                <Baza /> {/* адаптивен */}
+                <ForYou /> {/* адаптивен */}
+                <ResultLearning /> {/* адаптивен */}
+                <KakProhodit /> {/* адаптивен */}
+                <FAQs /> {/* исправлен */}
+                <Nabor /> {/* исправлен */}
+                <Okupaemost /> 
+                <Bonus /> 
+                <Students /> 
+                <Abasheva /> 
+                <Tarif /> {/* адаптивен */}
             </div>
         </div>
     )

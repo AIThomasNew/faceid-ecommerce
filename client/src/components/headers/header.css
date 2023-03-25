@@ -13,44 +13,14 @@
     font-size: 10px;
 }
 
-/* 
-header {
-  min-height: 70px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-}
-header .logo {
-  flex: 1;
-}
-header a {
-  text-transform: uppercase;
-  color: #555;
-}
-header ul li {
-  display: inline-block;
-  opacity: 0.7;
-  padding: 0 20px;
-}
-header ul li:hover {
-  opacity: 1;
-}
-.menu {
-  display: none;
-} */
-
 .app__navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--color-black);
-
     padding: 1rem 2rem;
+    z-index: 100;
 }
 
 .app__navbar-logo {
@@ -58,6 +28,7 @@ header ul li:hover {
     justify-content: flex-start;
     align-items: center;
     width: 258px;
+    z-index: 100;
 }
 
 .app__navbar-logo img {
@@ -70,8 +41,8 @@ header ul li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
     list-style: none;
+    z-index: 100;
 }
 
 .app__navbar-links .p__opensans {
@@ -89,6 +60,7 @@ header ul li:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 100;
 }
 
 .app__navbar-login .p__opensans {
@@ -99,7 +71,6 @@ header ul li:hover {
 }
 
 .app__navbar-login .p__opensans:hover {
-    /* border-bottom: 1px solid var(--color-blue); */
     color: var(--color-white);
 }
 
@@ -111,7 +82,6 @@ header ul li:hover {
 }
 
 .app__navbar-login .p__opensans-admin:hover {
-    /* border-bottom: 1px solid var(--color-blue); */
     color: var(--color-white);
 }
 
@@ -134,7 +104,6 @@ header ul li:hover {
     height: 100vh;
     background: var(--color-black);
     transition: 0.5s ease;
-
     flex-direction: column;
     z-index: 5;
 }
@@ -143,7 +112,6 @@ header ul li:hover {
     font-size: 27px;
     color: var(--color-silver);
     cursor: pointer;
-
     position: absolute;
     top: 20px;
     right: 20px;
@@ -167,6 +135,8 @@ header ul li:hover {
 .app__navbar-smallscreen_links .li__opensans:hover {
     color: var(--color-white);
 }
+
+/* адаптивность */
 
 @media screen and (min-width: 2000px) {
     .app__navbar-logo img {

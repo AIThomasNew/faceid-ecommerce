@@ -5,10 +5,9 @@ import AboutUs from './AboutUs/AboutUs'
 const Home = () => {
     return (
         <div>
-            <Header />
-            <AboutUs />
+            <Header /> {/* адаптивен */}
+            <AboutUs /> {/* адаптивен */}
         </div>
     )
 }
-
 export default Home

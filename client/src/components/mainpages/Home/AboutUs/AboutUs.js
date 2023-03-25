@@ -15,9 +15,6 @@ function Tilt(props) {
     return <div ref={tilt} {...rest} />
 }
 
-
-
-
 const textAnimation = {
     hidden: {
         y: -200,
@@ -29,7 +26,6 @@ const textAnimation = {
         transition: {delay: custom * 0.2},
     }),
 }
-
 
 const textAnimationLeft = {
     hidden: {
@@ -64,7 +60,6 @@ const AboutUs = () => {
         max: 25,
         glare: true,
     }
-
     const [width, setWidth] = useState(0)
     const carousel = useRef()
     const [width2, setWidth2] = useState(0)
@@ -73,6 +68,7 @@ const AboutUs = () => {
     useEffect(() => {
         setWidth(carousel.current.scrollWidth / 11 + carousel.current.offsetWidth)
     }, [])
+    
     useEffect(() => {
         setWidth2(carousel2.current.scrollWidth / 0.9 - carousel2.current.offsetWidth)
     }, [])
@@ -94,6 +90,7 @@ const AboutUs = () => {
                 </div>
 
                 <div className="aboutus__main">
+                    
                     <motion.div className="app__aboutus-content_about">
                         <motion.div custom={2} variants={textAnimationLeft} className="tilt-block">
                             <Tilt className="tilt" options={options}>
@@ -112,8 +109,10 @@ const AboutUs = () => {
                         </motion.div>
                     </motion.div>
 
+
                     <div className="achievements">
                         <ul className="p__opensans">
+
                             <motion.div custom={4} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
@@ -122,6 +121,7 @@ const AboutUs = () => {
                                     1 место номинация "Губы" Профи г.Оренбург, 2022
                                 </li>
                             </motion.div>
+
                             <motion.div custom={6} variants={textAnimationLeft}>
                                 <li>
                                     <div className="GiDiamondTrophy">
@@ -165,6 +165,7 @@ const AboutUs = () => {
                         </ul>
                     </div>
 
+
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -175,7 +176,12 @@ const AboutUs = () => {
                             Регалии и дипломы
                         </motion.h1>
 
-                        <motion.div custom={2} variants={textAnimationRight} ref={carousel} className="carousel">
+                        <motion.div 
+                        custom={2} 
+                        variants={textAnimationRight} 
+                        ref={carousel} 
+                        className="carousel">
+                            
                             <motion.div
                                 drag="x"
                                 dragConstraints={{right: 100, left: -width}}

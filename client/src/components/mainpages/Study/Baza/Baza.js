@@ -13,7 +13,6 @@ const textAnimationUp = {
         transition: {delay: custom * 0.2},
     }),
 }
-
 const textAnimationLeft = {
     hidden: {
         x: -400,
@@ -25,7 +24,6 @@ const textAnimationLeft = {
         transition: {delay: custom * 0.2},
     }),
 }
-
 const textAnimationDown = {
     hidden: {
         y: 200,
@@ -37,16 +35,15 @@ const textAnimationDown = {
         transition: {delay: custom * 0.2},
     }),
 }
-
-const textAnimationRight = {
+const photoAnim = {
     hidden: {
-        x: 400,
         opacity: 0,
     },
-    visible: (custom) => ({
-        x: 0,
+    visible: custom => ({
         opacity: 1,
-        transition: {delay: custom * 0.2},
+        transition: {
+            delay: custom * 0.5,
+        },
     }),
 }
 
@@ -73,7 +70,13 @@ const Baza = () => {
                         </motion.a>
                     </div>
                 </div>
-                <motion.div custom={1} variants={textAnimationRight} className="Baza-image">
+                <motion.div
+                    className="Baza-image"
+                    initial="hidden"
+                    whileInView="visible"
+                    custom={1}
+                    variants={photoAnim}
+                >
                     <img src={bazaIrinaImg} alt="baza_img" />
                 </motion.div>
             </div>

@@ -1,10 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {DataProvider} from './GlobalState'
+import './App.css'
+
 import Header from './components/headers/Header'
 import MainPages from './components/mainpages/Pages'
 import Footer from './components/footer/Footer'
-import './App.css'
 
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
         <DataProvider>
             <Router>
                 <div>
-                    <Header />
-                    <MainPages />
-                    <Footer />
+                    <Header />      {/* адаптивен */}
+                    <MainPages />   
+                    <Footer />      {/* адаптивен */}
                 </div>
             </Router>
         </DataProvider>

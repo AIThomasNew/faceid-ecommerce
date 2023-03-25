@@ -1,27 +1,31 @@
 import React, {useContext} from 'react'
-import {Routes, Route} from 'react-router-dom'
 import {Scroll} from '../mainpages/Scroll/ScrollToTop'
+import {Routes, Route} from 'react-router-dom'
 import {GlobalState} from '../../GlobalState'
 
 
+import Home from './Home/Home' // адаптивен
 
-import Home from './Home/Home'
-import Study from './Study/Study'
-import Online from './Study/Online'
-import Offline from './Study/Offline/Offline'
-import OurServices from './OurServices/OurServices'
+import Study from './Study/Study' // адаптивен
+import Online from './Study/Online' 
+import Offline from './Study/Offline/Offline' 
+
 import OurMasters from './OurMasters/OurMasters'
-import Order from './OurMasters/Order/Order'
-import Products from './products/Products'
-import DetailProduct from './detailProduct/DetailProduct'
-import Categories from './Categories/Categories'
-import CreateProduct from './CreateProduct/CreateProduct'
+import OurServices from './OurServices/OurServices'
+
+import Products from './products/Products' // адаптивен
+import DetailProduct from './detailProduct/DetailProduct' // адаптивен
+
+import Categories from './Categories/Categories' // адаптивен
+import CreateProduct from './CreateProduct/CreateProduct' // адаптивен
+
+import Cart from './cart/Cart' // провести рефакторинг
 import Login from './auth/Login'
 import Register from './auth/Register'
-import Cart from './cart/Cart'
-import NotFound from './utils/not_found/NotFound'
-import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
+
 import Info from './Info/Info'
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
+import NotFound from './utils/not_found/NotFound'
 
 
 
@@ -29,7 +33,6 @@ function Pages() {
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
-
     return (
         <div>
             <Routes>
@@ -39,7 +42,6 @@ function Pages() {
                 <Route path="/offline" element={<Offline />} />
                 <Route path="/services" element={<OurServices />} />
                 <Route path="/price" element={<OurMasters />} />
-                <Route path="/order" element={<Order />} />
 
                 <Route path="/shop" exact element={<Products />} />
                 <Route path="/shop/detail/:id" exact element={<DetailProduct />} />
@@ -64,6 +66,4 @@ function Pages() {
         </div>
     )
 }
-
-
 export default Pages

@@ -4,6 +4,7 @@ import {motion} from 'framer-motion'
 import LinkOnline from './LinksStudies/LinkOnline/LinkOnline'
 import LinkOffline from './LinksStudies/LinkOffline/LinkOffline'
 
+
 const Study = () => {
     return (
         <motion.div
@@ -12,10 +13,9 @@ const Study = () => {
             whileInView="visible"
             initial="hidden"
         >
-            <LinkOnline />
-            <LinkOffline />
+            <LinkOnline /> {/* не адаптивен */}
+            <LinkOffline /> {/* не адаптивен */}
         </motion.div>
     )
 }
-
 export default Study

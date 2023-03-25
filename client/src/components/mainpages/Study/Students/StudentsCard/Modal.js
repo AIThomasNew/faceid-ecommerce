@@ -3,6 +3,10 @@ import {IoCloseCircleOutline} from 'react-icons/io5'
 import {motion} from 'framer-motion'
 import './Modal.css'
 
+
+
+
+
 const Modal = ({data, close}) => {
     const {imageUrl, title, description1, description2, subtitle} = data
 

@@ -10,6 +10,7 @@
 .modal__image {
   object-fit: cover;
   border-radius: 20px;
+  height: 100%;
 }
 
 .modal__info {

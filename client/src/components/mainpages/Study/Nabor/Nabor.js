@@ -1,16 +1,34 @@
 import React, {useState} from 'react'
 import {motion, AnimateSharedLayout, AnimatePresence} from 'framer-motion'
 
+const textAnimationDown = {
+    hidden: {
+        y: 200,
+        opacity: 0,
+    },
+    visible: (custom) => ({
+        y: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2},
+    }),
+}
+
 const Nabor = () => {
     return (
-        <div className="Nabor padding-class">
+        <motion.div
+            viewport={{amount: 0.1, once: true}}
+            whileInView="visible"
+            initial="hidden"
+            className="Nabor padding-class"
+            custom={2} variants={textAnimationDown}
+        >
             <div className="Text">
                 <h4>На время обучения центр предоставляет моделей и все расходные материалы</h4>
 
                 <p>ОТРАБОТКА НА МОДЕЛЯХ</p>
                 <span></span>
                 <p>
-                    Мы даем МАКСИМУМ практики! Каждый ученик под контролем тренера отрабатывает каждую зону на 9 моделях
+                    Мы даем максимум практики! Каждый ученик под контролем тренера отрабатывает каждую зону на 9 моделях
                     (брови, губы, межресничка). Приступить к работе после обучение - легко! ДАРИМ нашим ученикам
                     стартовый набор, который включает все самое необходимое.
                 </p>
@@ -22,7 +40,7 @@ const Nabor = () => {
                     ))}
                 </motion.ul>
             </AnimateSharedLayout>
-        </div>
+        </motion.div>
     )
 }
 export default Nabor
@@ -37,7 +55,9 @@ function Item() {
             {/* <motion.div className="avatar" layout /> */}
             <motion.div>
                 <h4>СТАРТОВЫЙ НАБОР</h4>
-                <h5>для ТАРИФА Стандарт стоимостью <h5 className='word-price'>22580 руб.</h5></h5>
+                <h5>
+                    для ТАРИФА Стандарт стоимостью <h5 className="word-price">22580 руб.</h5>
+                </h5>
             </motion.div>
             <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
         </motion.li>

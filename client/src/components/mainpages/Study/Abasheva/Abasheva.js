@@ -1,5 +1,5 @@
 import React from 'react'
-import AbashevaTrener from '../img/AbashevaTrener.jpg'
+import AbashevaTrener from '../img/AbashevaTrener.png'
 
 const Abasheva = () => {
     return (
@@ -12,12 +12,11 @@ const Abasheva = () => {
                     <h2>Ирина Абашева</h2>
                     <p>
                         Более 17 лет опыта в индустрии красоты Основатель центра перманентного макияжа FACE ID в городе
-                        Перми +ссылка на инстаграм или вк
+                        Перми.
                     </p>
                 </div>
             </div>
         </div>
     )
 }
-
 export default Abasheva

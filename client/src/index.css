@@ -38,10 +38,6 @@
     -webkit-border-radius: 1ex;
 }
 
-/* ::-webkit-scrollbar-corner {
-    background: blue;
-  } */
-
 a {
     color: unset;
     text-decoration: none;

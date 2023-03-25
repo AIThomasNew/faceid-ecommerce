@@ -17,14 +17,18 @@ const textAnimationLeft = {
     }),
 }
 
+
 const LinkOnline = () => {
     return (
-        <motion.div custom={2} variants={textAnimationLeft} className="Study-properties">
+        <motion.div 
+        custom={2} 
+        variants={textAnimationLeft} 
+        className="Study-properties"
+        >
             {properties.map((item) => (
                 <Card data={item} key={item.id} />
             ))}
         </motion.div>
     )
 }
-
 export default LinkOnline

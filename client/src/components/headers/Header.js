@@ -4,10 +4,9 @@ import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {VscChromeClose} from 'react-icons/vsc'
+import Cart from './icon/cart.svg'
 import axios from 'axios'
 import images from './index'
-import Close from './icon/close.svg'
-import Cart from './icon/cart.svg'
 import './header.css'
 
 const textAnimation = {
@@ -28,13 +27,11 @@ const Header = () => {
     const [isAdmin] = state.userAPI.isAdmin
     const [cart] = state.userAPI.cart
     const [toggleMenu, setToggleMenu] = useState(false)
-
     const logoutUser = async () =>{
         await axios.get('/user/logout')
         localStorage.removeItem('firstLogin')
         window.location.href = "/"
     }
-
     const adminRouter = () =>{
         return(
             <>
@@ -43,7 +40,6 @@ const Header = () => {
             </>
         )
     }
-
     const loggedRouter = () =>{
         return(
             <>
@@ -79,9 +75,9 @@ const Header = () => {
                     // <li><Link to="/login"  className="p__opensans">ВХОД ✥ РЕГИСТРАЦИЯ</Link></li>
                     <li><Link to="/login" className="p__opensans">ВХОД / РЕГИСТРАЦИЯ</Link></li>
                 }
-                <li>
+                {/* <li>
                     <img src={Close} alt="" width="30" className='menu' />
-                </li>            
+                </li> */}
             </motion.div>
 
             

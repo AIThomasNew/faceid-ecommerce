@@ -24,46 +24,145 @@ function Tarif() {
             price: 108000,
         },
     ]
-
     const data = [
         {
-            value: 'Full face Rs.250',
+            value: 'Без стартового набора',
             type: 'Лайт',
         },
         {
-            value: 'Cheeks Rs. 90',
+            value: 'Учебное пособие по перманентному макияжу',
             type: 'Лайт',
         },
         {
-            value: 'Jawline Rs.50',
+            value: '5 дней онлайн подготовка',
             type: 'Лайт',
         },
         {
-            value: 'Lower Lip Rs.50',
+            value: '5 дней практика в центре',
             type: 'Лайт',
         },
         {
-            value: 'Upper Lip Rs.50',
+            value: '6 моделей',
             type: 'Лайт',
         },
         {
-            value: 'Under arms Rs.100',
+            value: 'Поддержка в чате после обучения',
             type: 'Лайт',
         },
         {
-            value: 'Full Legs Rs.450',
+            value: 'Без возможности стажировки в центре после обучения',
+            type: 'Лайт',
+        },
+        {
+            value: 'Доступ к урокам 1 месяц после завершения обучения',
+            type: 'Лайт',
+        },
+        {
+            value: 'Скидка -10% на пигменты в магазине центра FaceID',
+            type: 'Лайт',
+        },
+        {
+            value: 'Свидетельство о присвоении квалификации «Косметик 4 разряда»',
+            type: 'Лайт',
+        },
+        {
+            value2: 'Стартовый набор стоимостью 22580 (гарантия на оборудование 3 месяца)',
             type: 'Стандарт',
         },
         {
-            value: 'Half Legs Rs.300',
+            value2: 'Учебное пособие по перманентному макияжу',
             type: 'Стандарт',
         },
         {
-            value: 'Daily Backups',
+            value2: '5 дней онлайн подготовка',
+            type: 'Стандарт',
+        },
+        {
+            value2: '5 дней практика в центре',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Практика на 9 моделях',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Поддержка в чате после обучения',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Возможность стажировки в центре после обучения 1 месяц',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Набор плакатов и чек листов',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Памятки для клиентов • Договор с клиентом',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Доступ к урокам 3 месяца после завершения обучения',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Скидка -10% на пигменты в магазине центра FaceID',
+            type: 'Стандарт',
+        },
+        {
+            value2: 'Свидетельство о присвоении квалификации «Косметик 4 разряда»',
+            type: 'Стандарт',
+        },
+        {
+            value3: 'Стартовый набор стоимостью 57980 (гарантия на оборудование 1 год)',
             type: 'Стандарт+',
         },
         {
-            value: 'One Click Setup',
+            value3: 'Учебное пособие по перманентному макияжу',
+            type: 'Стандарт+',
+        },
+        {
+            value3: '5 дней онлайн подготовка',
+            type: 'Стандарт+',
+        },
+        {
+            value3: '5 дней практика в центре',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Практика на 9 моделях',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Поддержка в чате после обучения',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Возможность стажировки в центре после обучения 1 месяц',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Набор плакатов и чек листов',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Памятки для клиентов',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Договор с клиентом',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Доступ к урокам 6 месяцев после завершения обучения',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Скидка -10% на пигменты в магазине центра FaceID',
+            type: 'Стандарт+',
+        },
+        {
+            value3: 'Свидетельство о присвоении квалификации «Косметик 4 разряда»x  ',
             type: 'Стандарт+',
         },
     ]
@@ -100,32 +199,39 @@ function Tarif() {
                                     <p>{price}</p>
                                 </div>
                             </div>
+
                             <div className="pricing__plan__content">
                                 <ul className={`pricing__plan__content__features ${name}`}>
-                                    {data.map(({value, type}, index2) => {
+                                    {data.map(({value, value2, value3, type}, index2) => {
                                         return (
                                             <Fragment key={index2}>
                                                 {name === 'Лайт' ? (
                                                     type === name ? (
                                                         <li>{value}</li>
                                                     ) : (
-                                                        <li className="line">{value}</li>
+                                                        <li className="a">{value}</li>
                                                     )
                                                 ) : name === 'Стандарт' ? (
-                                                    type === 'Лайт' || type === name ? (
-                                                        <li>{value}</li>
+                                                    type === name ? (
+                                                        <li>{value2}</li>
                                                     ) : (
-                                                        <li className="line">{value}</li>
+                                                        <li className="a">{value2}</li>
                                                     )
                                                 ) : (
-                                                    name === 'Стандарт+' && <li>{value}</li>
+                                                    name === 'Стандарт+' &&
+                                                    (type === name ? (
+                                                        <li>{value3}</li>
+                                                    ) : (
+                                                        <li className="a">{value3}</li>
+                                                    ))
                                                 )}
                                             </Fragment>
                                         )
                                     })}
                                 </ul>
+
                                 <div className="pricing__plan__content__actions">
-                                    <span>Order Now</span>
+                                    <span>Купить сейчас</span>
                                     <img src={play} alt="Order Now" />
                                 </div>
                             </div>
@@ -137,11 +243,10 @@ function Tarif() {
     )
 }
 
-// https://irinaabasheva.getcourse.ru/page4 - Лайт
-// https://irinaabasheva.getcourse.ru/page5 - Стандарт
-// https://irinaabasheva.getcourse.ru/page6 - Стандарт +
-
 const Section = styled.section`
+    .a {
+        display: None;
+    }
     min-height: 100vh;
     padding: 5rem 0;
     position: relative;
@@ -173,6 +278,16 @@ const Section = styled.section`
             font-size: 2rem;
         }
     }
+    // .pricing__plan__content {
+    //     width: 500px;
+    // }
+    .pricing__plan__content ul li {
+        margin-top: 13px;
+        font-size: 13px;
+    }
+    .pricing__plan__content__actions:hover {
+        cursor: pointer;
+    }
     .pricing {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -184,7 +299,7 @@ const Section = styled.section`
             gap: 2rem;
             &:nth-child(2) {
                 .pricing__plan__content {
-                    padding: 0 5rem;
+                    padding: 0 2rem;
                     border-left: 0.2rem solid #180f14;
                     border-right: 0.2rem solid #180f14;
                 }
@@ -229,6 +344,7 @@ const Section = styled.section`
                     flex-direction: column;
                     gap: 0.6rem;
                     .line {
+                        margin: 0 20px;
                         text-decoration: line-through;
                     }
                     margin-bottom: 2rem;
@@ -247,6 +363,7 @@ const Section = styled.section`
             }
         }
     }
+
     @media screen and (min-width: 280px) and (max-width: 1080px) {
         padding: 1rem;
         background-color: var(--color-red);
@@ -293,71 +410,3 @@ const Section = styled.section`
     }
 `
 export default Tarif
-
-// import React from 'react'
-
-// const Tarif = () => {
-//     return (
-//         <div>
-//             <div className="Tarif-Container padding-class">
-//                 <h2>Тарифы</h2>
-//                 <div className="Tarif">
-//                     <div className="1T">
-//                         <h3>1. Тариф Лайт</h3>
-//                         <ul>
-//                             <li> • Без стартового набора </li>
-//                             <li> • Учебное пособие по перманентному макияжу </li>
-//                             <li> • 5 дней онлайн подготовка </li>
-//                             <li> • 5 дней практика в центре </li>
-//                             <li>• 6 моделей </li>
-//                             <li>• Поддержка в чате после обучения </li>
-//                             <li>• Без возможности стажировки в центре после обучения </li>
-//                             <li>• Доступ к урокам 1 месяц после завершения обучения </li>
-//                             <li> • Скидка -10% на пигменты в магазине центра FaceID </li>
-//                             <li> • Свидетельство о присвоении квалификации «Косметик 4 разряда». </li>
-//                         </ul>
-//                         <h3>49000р Ссылка - https://irinaabasheva.getcourse.ru/lait</h3>
-//                     </div>
-//                     <div className="2T">
-//                         <h3>2. Тариф Стандарт</h3>
-//                         <ul>
-//                             <li>• Стартовый набор стоимостью 22580 (гарантия на оборудование 3 месяца)</li>
-//                             <li>• Учебное пособие по перманентному макияжу </li>
-//                             <li>• 5 дней онлайн подготовка </li>
-//                             <li> • 5 дней практика в центре </li>
-//                             <li>• Практика на 9 моделях </li>
-//                             <li> • Поддержка в чате после обучения </li>
-//                             <li> • Возможность стажировки в центре после обучения 1 месяц </li>
-//                             <li>• Набор плакатов и чек листов </li>
-//                             <li> • Памятки для клиентов • Договор с клиентом </li>
-//                             <li> • Доступ к урокам 3 месяца после завершения обучения </li>
-//                             <li> • Скидка -10% на пигменты в магазине центра FaceID </li>
-//                             <li> • Свидетельство о присвоении квалификации «Косметик 4 разряда». </li>
-//                         </ul>
-//                         <h3>72000р Ссылка - https://irinaabasheva.getcourse.ru/standart</h3>
-//                     </div>
-//                     <div className="3T">
-//                         <h3>3. Тариф Стандарт+</h3>
-//                         <li>• Стартовый набор стоимостью 57980 (гарантия на оборудование 1 год) </li>
-//                         <li> • Учебное пособие по перманентному макияжу </li>
-//                         <li> • 5 дней онлайн подготовка </li>
-//                         <li> • 5 дней практика в центре </li>
-//                         <li> • Практика на 9 моделях </li>
-//                         <li>• Поддержка в чате после обучения </li>
-//                         <li>• Возможность стажировки в центре после обучения 1 месяц </li>
-//                         <li>• Набор плакатов и чек листов </li>
-//                         <li>• Памятки для клиентов </li>
-//                         <li>• Договор с клиентом </li>
-//                         <li> • Доступ к урокам 6 месяцев после завершения обучения </li>
-//                         <li>• Скидка -10% на пигменты в магазине центра FaceID </li>
-//                         <li>• Свидетельство о присвоении квалификации «Косметик 4 разряда». </li>
-
-//                         <h3>108000р Ссылка - https://irinaabasheva.getcourse.ru/standart+</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Tarif

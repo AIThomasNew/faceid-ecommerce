@@ -1,7 +1,7 @@
 export const properties = [
     {
         id: 1,
-        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1671548608/test/chumakova_ndm6n7.webp',
+        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1678120066/test/chumakova_u1cwki.jpg',
         title: 'Чумакова Екатерина',
         subtitle: '@kate_permanent59 г. Пермь',
         description1: 'Точка А: Работала в банке, ушла в декрет и решила отучиться на мастера ПМ',
@@ -10,7 +10,7 @@ export const properties = [
     },
     {
         id: 2,
-        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1671548643/test/olkova_nzdnla.webp',
+        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1678119997/test/olkova_ibqvs9.jpg',
         title: 'Олькова Ирина',
         subtitle: '@iris_permanent_perm г. Пермь',
         description1:
@@ -21,7 +21,7 @@ export const properties = [
     {
         id: 3,
         imageUrl:
-            'https://res.cloudinary.com/mongodb-1/image/upload/v1671548644/test/kurbanova_okyyfh.webp',
+            'https://res.cloudinary.com/mongodb-1/image/upload/v1678119947/test/kurbanova_kbdlpf.jpg',
         title: 'Курбанова Фаниля',
         subtitle: '@faya_lash_kungur г. Кунгур',
         description1:
@@ -43,7 +43,7 @@ export const properties = [
     {
         id: 5,
         imageUrl:
-            'https://res.cloudinary.com/mongodb-1/image/upload/v1671548645/test/starceva_ev6kyw.webp',
+            'https://res.cloudinary.com/mongodb-1/image/upload/v1678120163/test/starceva_fthzdi.jpg',
         title: 'Елена Старцева',
         subtitle: '@lenaporubova г. Пермь / г. Нытва',
         description1:
@@ -65,7 +65,7 @@ export const properties = [
     {
         id: 7,
         imageUrl:
-            'https://res.cloudinary.com/mongodb-1/image/upload/v1671548646/test/biserova_stmma2.webp',
+            'https://res.cloudinary.com/mongodb-1/image/upload/v1678120245/test/biserova_lvvpod.jpg',
         title: 'Елена Бисерова',
         subtitle: 'г. Добрянка',
         description1:

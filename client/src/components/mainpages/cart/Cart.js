@@ -6,7 +6,6 @@ import axios from 'axios'
 
 
 function Cart() {
-    
     const state = useContext(GlobalState)
     const [cart, setCart] = state.userAPI.cart
     const [token] = state.token
@@ -17,10 +16,8 @@ function Cart() {
             const total = cart.reduce((prev, item) => {
                 return prev + (item.price * item.quantity)
             }, 0)
-
             setTotal(total)
         }
-
         getTotal()
     },[cart])
 
@@ -35,7 +32,6 @@ function Cart() {
                 item.quantity += 1
             }
         })
-
         setCart([...cart])
         addToCart()
     }
@@ -45,7 +41,6 @@ function Cart() {
                 item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
             }
         })
-
         setCart([...cart])
         addToCart()
     }
@@ -56,12 +51,10 @@ function Cart() {
                     cart.splice(index, 1)
                 }
             })
-
             setCart([...cart])
             addToCart()
         }
     }
-
 
     if (cart.length === 0) 
         return <h2 style={{textAlign: 'center', fontSize: '2rem', fontWeight: '400', margin: '200px 0 200px 0', color: 'silver'}}>В корзине пусто</h2>
@@ -100,5 +93,4 @@ function Cart() {
         </div>
     )
 }
-
 export default Cart

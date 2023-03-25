@@ -5,31 +5,33 @@
   /* Full height */
   /* height: 100%; */
   min-height: 850px;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   /* background-size: cover; */
 }
-
+.app__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
 .app__wrapper_img {
   transition: 0.3s;
-
-  /* margin-top: -130px;
-    position: absolute;
-
-    background-position: center;
-    background-repeat: no -repeat;
-    background-size: cover; */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
 }
-
-/* .app__wrapper_h {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-} */
-
+.app__wrapper_img-reverse {
+  justify-content: flex-start;
+  margin-right: 2rem;
+}
+.app__wrapper_img img {
+  width: 80%;
+}
 .app__wrapper_h1 {
   position: absolute;
   color: #fff;
@@ -39,7 +41,6 @@
   width: 100%;
   margin-bottom: -280px;
 }
-
 .LOGO_TEXT {
   font-family: 'Montserrat', sans-serif;
   position: relative;
@@ -50,15 +51,12 @@
   text-align: center;
   -webkit-box-reflect: below -40px linear-gradient (transparent, #0004);
 }
-
 .LOGO_TEXT span {
   animation: animate 5s linear infinite;
 }
-
 h1 span:nth-child(even) {
   animation-delay: 0.4s;
 }
-
 @keyframes animate {
   0%,
   18%,
@@ -88,9 +86,7 @@ h1 span:nth-child(even) {
       0 0 80px #0357f4, 0 0 160px #0357f4, 0 0 400px #0357f4;
   }
 }
-
 /* #03bcf4 */
-
 .app__wrapper_h2 {
   position: absolute;
   color: #fff;
@@ -101,58 +97,99 @@ h1 span:nth-child(even) {
   width: 100%;
   margin-bottom: -550px;
 }
-
 .PM_TEXT {
   font-weight: 500;
   font-size: 29px;
   color: rgb(201, 201, 201);
   letter-spacing: 2px;
-
   font-family: 'Montserrat', sans-serif;
 }
 
-/* .app__header-h1 {
-    font-family: var(--font-base);
-    color: var(--color-golden);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: capitalize;
-    line-height: 117px;
-    font-size: 90px;
-} */
-
-/* .app__wrapper_img {
-    height: 100%;
-    width: 100%;
-}
-
-.app__header-img img {
-    width: 80%;
-} */
+/** адаптивность */
+/* для смартфонов — 320 px, 480 px и выше;
+для планшетов — 768 px и выше;
+для нетбуков — 1024 px и выше;
+для мониторов — 1280 px, 1600 px, 1920 px и выше. */
 
 @media screen and (min-width: 2000px) {
-  .app__header-h1 {
-    font-size: 180px;
-    line-height: 210px;
-  }
+  /* .app__wrapper_h1 {}
+  .app__wrapper_h2 {}
+  .PM_TEXT {} 
+  */
 }
 
 @media screen and (max-width: 1150px) {
-  .app__header-h1 {
-    font-size: 90px;
+  .LOGO_TEXT {
+    font-size: 130px;
+    width: 100%;
+  }
+  .app__wrapper_h2 {
+    margin-bottom: -455px;
+  }
+  .PM_TEXT {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .app__wrapper_img {
+    margin-top: -50px;
+  }
+  .LOGO_TEXT {
+    font-size: 100px;
+    width: 100%;
+  }
+  .app__wrapper_h1 {
+    margin-bottom: -230px;
+
+  }
+  .app__wrapper_h2 {
+    margin-bottom: -380px;
+  }
+  .PM_TEXT {
+    font-size: 17px;
+    letter-spacing: 2px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .app__header-h1 {
-    font-size: 70px;
-    line-height: 87px;
+  .app__wrapper_img {
+    margin-top: -60px;
+  }
+  .LOGO_TEXT {
+    font-size: 80px;
+    width: 100%;
+  }
+  .app__wrapper_h1 {
+    margin-bottom: -180px;
+  }
+  .app__wrapper_h2 {
+    margin-bottom: -300px;
+  }
+  .PM_TEXT {
+    font-size: 13px;
+    letter-spacing: 2px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .app__header-h1 {
-    font-size: 50px;
-    line-height: 70px;
+  .app__wrapper_img {
+    display: none;
+  }
+  .LOGO_TEXT {
+    font-size: 110px;
+    width: 100%;
+  }
+  .app__wrapper_h1 {
+    margin-bottom: -90px;
+  }
+  .app__wrapper_h2 {
+    margin-bottom: -455px;
+  }
+  .PM_TEXT {
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 }
+
