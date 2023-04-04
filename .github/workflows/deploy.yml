@@ -15,12 +15,12 @@ jobs:
         script: |
           cp .env ~/faceid-ecommerce/backend
           cd ~/faceid-ecommerce
-          git pull origin master
+          git pull origin main
           git status 
           echo "Start install backend app"
-          npm --prefix ./backend ci
+          npm --prefix ./backend i
           echo "Start install client app"
-          npm --prefix ./backend ci
+          npm --prefix ./backend i
           npm --prefix ./client run build
           echo "Build complete"
           pm2 restart all
