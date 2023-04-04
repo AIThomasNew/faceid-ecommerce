@@ -3,7 +3,7 @@ on: [push]
 jobs:
 
   build:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
@@ -12,4 +12,10 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }} 
-        script: whoami
+        script: |
+          cd ~/faceid-ecommerce
+          git pull origin master
+          git status
+          npm run init
+          npm run start:backend
+          npm run start:client
