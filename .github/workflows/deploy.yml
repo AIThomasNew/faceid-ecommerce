@@ -17,5 +17,6 @@ jobs:
           cd ~/faceid-ecommerce
           git pull origin master
           git status 
-          cd client & npm run build & cd ../
+          npm --prefix ./client run build
+          echo "Build complete"
           pm2 restart all
