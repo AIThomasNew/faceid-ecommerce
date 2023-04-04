@@ -2,14 +2,14 @@ name: Site CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy using ssh
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@main
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -17,7 +17,7 @@ jobs:
         port: 22
         script: |
           cd ~/faceid-ecommerce
-          git pull origin master
+          git pull origin main
           git status
           npm run init
           npm run start:backend
