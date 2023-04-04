@@ -20,7 +20,7 @@ jobs:
           echo "Start install backend app"
           npm --prefix ./backend i
           echo "Start install client app"
-          npm --prefix ./backend i
+          npm --prefix ./client i
           npm --prefix ./client run build
           echo "Build complete"
           pm2 restart all
