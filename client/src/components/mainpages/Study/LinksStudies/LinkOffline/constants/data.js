@@ -1,7 +1,7 @@
 export const properties = [
     {
         id: 1,
-        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1671715728/test/offline_i8mkml.png',
+        imageUrl: 'https://res.cloudinary.com/mongodb-1/image/upload/v1683299677/offline_i8mkml_vpxhmm.png',
         title: 'OFFLINE ОБУЧЕНИЕ',
         subtitle: 'МАСТЕР-КЛАССЫ',
         description:

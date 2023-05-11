@@ -3,29 +3,22 @@ import {Scroll} from '../mainpages/Scroll/ScrollToTop'
 import {Routes, Route} from 'react-router-dom'
 import {GlobalState} from '../../GlobalState'
 
-
 import Home from './Home/Home' // адаптивен
-
 import Study from './Study/Study' // адаптивен
 import Online from './Study/Online' 
 import Offline from './Study/Offline/Offline' 
-
 import OurMasters from './OurMasters/OurMasters'
 import OurServices from './OurServices/OurServices'
-
-import Products from './products/Products' // адаптивен
-import DetailProduct from './detailProduct/DetailProduct' // адаптивен
-
-import Categories from './Categories/Categories' // адаптивен
-import CreateProduct from './CreateProduct/CreateProduct' // адаптивен
-
-import Cart from './cart/Cart' // провести рефакторинг
-import Login from './auth/Login'
-import Register from './auth/Register'
-
 import Info from './Info/Info'
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import NotFound from './utils/not_found/NotFound'
+import Products from './products/Products' // адаптивен
+import DetailProduct from './detailProduct/DetailProduct' // адаптивен
+import Categories from './Categories/Categories' // адаптивен
+import CreateProduct from './CreateProduct/CreateProduct' // адаптивен
+import Cart from './cart/Cart' // провести рефакторинг
+import Login from './auth/Login'
+import Register from './auth/Register'
 
 
 

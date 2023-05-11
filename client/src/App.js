@@ -7,7 +7,6 @@ import Header from './components/headers/Header'
 import MainPages from './components/mainpages/Pages'
 import Footer from './components/footer/Footer'
 
-
 function App() {
     return (
         <DataProvider>
@@ -21,5 +20,4 @@ function App() {
         </DataProvider>
     )
 }
-
 export default App

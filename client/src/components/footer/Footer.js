@@ -5,8 +5,6 @@ import {BsWhatsapp} from 'react-icons/bs'
 import {FaTelegramPlane} from 'react-icons/fa'
 import './Footer.css'
 
-
-
 const Footer = () => (
     <div className="app__footer section__padding" id="login">
         <div className="app__footer-links">
@@ -57,11 +55,8 @@ const Footer = () => (
             </div>
         </div>
         <div className="footer__copyright">
-            <p className="p__opensans">2022 FACE ID. Все права защищены.</p>
+            <p className="p__opensans">2023 FACE ID. Все права защищены.</p>
         </div>
     </div>
 )
-
-
-
 export default Footer
