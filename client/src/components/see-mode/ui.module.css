@@ -1,0 +1,99 @@
+/* wrapper */
+.wrapper {
+  background: #fff;
+  max-width: 700px;
+  min-width: 600px;
+  position: absolute;
+  z-index: 9999;
+  right: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 10px #8e8e8e;
+}
+/* h */
+.wrapper .h2 {
+  width: 100%;
+  display: flex;
+}
+.wrapper h3 {
+  margin-right: 10px;
+}
+/* wrapp settings */
+.wrappSettings {
+  display: flex;
+}
+.wrappSettings .settText,
+.wrappSettings .settColor {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  width: 50%;
+  transition: all 0.5s;
+}
+/* item */
+.item {
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+/* style text */
+.settText .item {
+  border: 1px solid #8e8e8e;
+  font-weight: 600;
+}
+.settText #bold {
+  font-weight: 900;
+}
+.settText #underline {
+  text-decoration: underline;
+}
+.settText #cursive {
+  font-style: italic;
+}
+/* settColor */
+.settColor .inputColor {
+  padding: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.wrappSettings2 .settFont,
+.wrappSettings2 .settSize {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+/* size */
+.settSize .item:nth-child(2) {
+  font-size: 16px;
+}
+.settSize .item:nth-child(3) {
+  font-size: 18px;
+}
+.settSize .item:nth-child(4) {
+  font-size: 24px;
+}
+/* font  */
+.settFont .item:nth-child(2) {
+  font-family: calibri;
+}
+.settFont .item:nth-child(3) {
+  font-family: monospace;
+}
+.settFont .item:nth-child(4) {
+  font-family: roboto;
+}
+.settFont .item:nth-child(5) {
+  font-family: Montserrat;
+}

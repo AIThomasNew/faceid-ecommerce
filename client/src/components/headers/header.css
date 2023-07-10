@@ -14,6 +14,7 @@
 }
 
 .app__navbar {
+    /* border: 1px solid red; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -37,20 +38,20 @@
 }
 
 .app__navbar-links {
+    /* border: 1px solid yellow; */
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     z-index: 100;
+    margin-right: 258px;
 }
-
 .app__navbar-links .p__opensans {
     margin: 0 1rem;
     cursor: pointer;
     color: var(--color-silver);
 }
-
 .app__navbar-links .p__opensans:hover {
     color: var(--color-white);
     transition: 0.5s;

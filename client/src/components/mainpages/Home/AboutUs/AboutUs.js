@@ -166,6 +166,13 @@ const AboutUs = () => {
                     </div>
 
 
+
+
+
+
+
+
+
                     <motion.div
                         initial="hidden"
                         whileInView="visible"

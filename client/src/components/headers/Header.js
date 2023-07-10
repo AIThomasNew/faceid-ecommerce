@@ -1,123 +1,161 @@
-import React, {useState, useContext} from 'react'
-import { GlobalState } from '../../GlobalState'
-import {Link} from 'react-router-dom'
-import {motion} from 'framer-motion'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {VscChromeClose} from 'react-icons/vsc'
-// import Cart from './icon/cart.svg'
-import axios from 'axios'
-import images from './index'
-import './header.css'
+import React, { useState, useContext, useRef } from "react";
+import { GlobalState } from "../../GlobalState";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { VscChromeClose } from "react-icons/vsc";
+import See from "./icon/see.svg";
+import axios from "axios";
+import images from "./index";
+import "./header.css";
+import { SeeMode } from "../see-mode/";
+import { useSeeMode } from "../see-mode/module";
+import { SERVER_URL } from "../mainpages/Info/models";
 
 const textAnimation = {
-    hidden: {
-        y: -300,
-        opacity: 0,
-    },
-    visible: {
-        y: 0,
-        opacity: 1,
-    },
-}
-
+  hidden: {
+    y: -300,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Header = () => {
-    // const state = useContext(GlobalState)
-    // const [isLogged] = state.userAPI.isLogged
-    // const [isAdmin] = state.userAPI.isAdmin
-    // const [cart] = state.userAPI.cart
-    const [toggleMenu, setToggleMenu] = useState(false)
-    // const logoutUser = async () =>{
-    //     await axios.get('/user/logout')
-    //     localStorage.removeItem('firstLogin')
-    //     window.location.href = "/"
-    // }
-    // const adminRouter = () =>{
-    //     return(
-    //         <>
-    //             <li><Link to="/create_product" className="p__opensans-admin">СОЗДАТЬ ТОВАР</Link></li>
-    //             <li><Link to="/category" className="p__opensans-admin">КАТЕГОРИИ</Link></li>
-    //         </>
-    //     )
-    // }
-    // const loggedRouter = () =>{
-    //     return(
-    //         <>
-    //             <li><Link to="/history" className="p__opensans-admin">ИСТОРИЯ</Link></li>
-    //             <li><Link to="/" className="p__opensans" onClick={logoutUser}>ВЫЙТИ</Link></li>
-    //         </>
-    //     )
-    // }
+  const state = useContext(GlobalState);
+  const [isLogged] = state.userAPI.isLogged;
+  const [isAdmin] = state.userAPI.isAdmin;
+  const [cart] = state.userAPI.cart;
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [handleSeeMode, setSeeMode] = useState(false);
+  const logoutUser = async () => {
+    await axios.get(`${SERVER_URL}/api/user/logout`, {
+      withCredentials: true,
+    });
+    // localStorage.removeItem("firstLogin");
+    window.location.href = "/";
+  };
+  
+  
 
+  // see mode
+  const store = useSeeMode();
+  const turn = useSeeMode((state) => state.turn);
+  const styles = {
+    color: store.color,
+    fontSize: store.size,
+    fontFamily: store.font,
+    fontStyle: store.style,
+    fontWeight: store.style,
+    textDecoration: store.style,
+  };
 
-    return (
-        <motion.nav initial="hidden" whileInView="visible" className="app__navbar">
+  return (
+    <>
+      <motion.nav
+        initial="hidden"
+        whileInView="visible"
+        className="app__navbar"
+      >
+        <motion.div variants={textAnimation} className="app__navbar-logo">
+          <img src={images.faceid} alt="app__logo" />
+          {/* {isAdmin ? <h3 style={{color: "#fff"}}>Админ</h3> : <img src={images.faceid} alt="app__logo" />} */}
+        </motion.div>
 
-            <motion.div variants={textAnimation} className="app__navbar-logo">
-                <img src={images.faceid} alt="app__logo" />
-                {/* {isAdmin ? <h3 style={{color: "#fff"}}>Админ</h3> : <img src={images.faceid} alt="app__logo" />} */}
-            </motion.div>
+        <motion.div variants={textAnimation} className="app__navbar-links">
+          <Link to="/" className="p__opensans" style={turn ? styles : {}}>
+            ГЛАВНАЯ
+          </Link>
+          <Link to="/study" className="p__opensans" style={turn ? styles : {}}>
+            ОБУЧЕНИЕ
+          </Link>
+          <Link
+            to="/services"
+            className="p__opensans"
+            style={turn ? styles : {}}
+          >
+            УСЛУГИ
+          </Link>
+          {/* <Link to="/shop" className="p__opensans" style={turn ? styles : {}}>
+            {isAdmin ? "ТОВАРЫ" : "МАГАЗИН"}
+          </Link> */}
+        </motion.div>
 
-
-            <motion.div variants={textAnimation} className="app__navbar-links">
-                <Link to="/" className="p__opensans">ГЛАВНАЯ</Link>
-                <Link to="/study" className="p__opensans">ОБУЧЕНИЕ</Link>
-                <Link to="/services" className="p__opensans">УСЛУГИ</Link>
-                {/* <Link to="/shop" className="p__opensans">{isAdmin ? 'ТОВАРЫ' : 'МАГАЗИН'}</Link> */}
-            </motion.div>
-
-
-            {/* <motion.div variants={textAnimation} className="app__navbar-login"> */}
-                {/* {isAdmin && adminRouter()} */}
-                {/* {
-                    isLogged ? loggedRouter() 
-                    : 
-                    // <li><Link to="/login"  className="p__opensans">ВХОД ✥ РЕГИСТРАЦИЯ</Link></li>
-                    <li><Link to="/login" className="p__opensans">ВХОД / РЕГИСТРАЦИЯ</Link></li>
-                } */}
-                {/* <li>
+        <motion.div variants={textAnimation} className="app__navbar-login">
+          
+          {/* <li>
                     <img src={Close} alt="" width="30" className='menu' />
                 </li> */}
-            {/* </motion.div> */}
+          <li style={{ marginRight: 10 }}>
+            <img
+              style={{ cursor: "pointer" }}
+              src={See}
+              alt="see_icon"
+              onClick={() => setSeeMode(!handleSeeMode)}
+            />
+          </li>
+        </motion.div>
+        
 
-            
-            {/* {
-                isAdmin ? '' 
-                :
-                <div className="cart-icon">
-                    <span>{cart.length}</span>
-                    <Link to="/cart">
-                        <img src={Cart} alt="" width="30" />
-                    </Link>
-                </div>
-            } */}
+        <div className="app__navbar-smallscreen">
+          <GiHamburgerMenu
+            color="#fff"
+            fontSize={27}
+            onClick={() => setToggleMenu(true)}
+          />
+          {toggleMenu && (
+            <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+              <VscChromeClose
+                fontSize={27}
+                className="overlay__close"
+                onClick={() => setToggleMenu(false)}
+              />
 
-
-            <div className="app__navbar-smallscreen">
-                <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
-                {toggleMenu && (
-                    <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-                        <VscChromeClose fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
-
-                        <div className="app__navbar-smallscreen_links">
-                            <Link to="/" className="li__opensans" onClick={() => setToggleMenu(false)}>
-                                Главная
-                            </Link>
-                            <Link to="/study" className="li__opensans" onClick={() => setToggleMenu(false)}>
-                                Обучение
-                            </Link>
-                            <Link to="/services" className="li__opensans" onClick={() => setToggleMenu(false)}>
-                                Услуги
-                            </Link>
-                            {/* <Link to="/shop" className="li__opensans" onClick={() => setToggleMenu(false)}>
-                                Магазин
-                            </Link> */}
-                        </div>
-                    </div>
-                )}
+              <div className="app__navbar-smallscreen_links">
+                <Link
+                  to="/"
+                  className="li__opensans"
+                  onClick={() => setToggleMenu(false)}
+                  style={turn ? styles : {}}
+                >
+                  Главная
+                </Link>
+                <Link
+                  to="/study"
+                  className="li__opensans"
+                  onClick={() => setToggleMenu(false)}
+                  style={turn ? styles : {}}
+                >
+                  Обучение
+                </Link>
+                <Link
+                  to="/services"
+                  className="li__opensans"
+                  onClick={() => setToggleMenu(false)}
+                  style={turn ? styles : {}}
+                >
+                  Услуги
+                </Link>
+                {/* <Link
+                  to="/shop"
+                  className="li__opensans"
+                  onClick={() => setToggleMenu(false)}
+                  style={turn ? styles : {}}
+                >
+                  Магазин
+                </Link> */}
+              </div>
             </div>
-        </motion.nav>
-    )
-}
+          )}
+        </div>
 
-export default Header
+      </motion.nav>
+
+      {handleSeeMode ? <SeeMode /> : ""}
+    </>
+  );
+};
+
+export default Header;

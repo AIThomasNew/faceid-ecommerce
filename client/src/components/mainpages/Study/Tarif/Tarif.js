@@ -172,7 +172,7 @@ function Tarif() {
             <Title value="Тарифы" />
             <div className="background">
                 <img src={pricing1} alt="background" className="bg1" />
-                <img src={pricing2} alt="background" className="bg2" />
+                {/* <img src={pricing2} alt="background" className="bg2" /> */}
             </div>
             <div className="pricing__title">
                 <p>От нуля к профессии за 10 дней</p>

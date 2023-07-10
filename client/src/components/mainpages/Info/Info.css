@@ -1,0 +1,137 @@
+.privacyPolicyContainer {
+    background: var(--color-black);
+}
+
+
+
+
+
+
+.app__aboutus-content_diplomas_Info {
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.headtext__cormorant__mini_Info {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-weight: 600;
+  margin-top: 10px;
+  /* text-transform: 'uppercase';  */
+  font-size: 25px;
+}
+
+.carousel_Info {
+  cursor: grab;
+  overflow: hidden;
+  /* height: 50%; */
+}
+
+.item_Info {
+  height: 100%;
+  /* min-width: 25rem; */
+  min-width: 520px;
+  padding: 40px;
+}
+
+.item_Info img {
+  /* width: 150%; */
+  width: 500px;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+.inner-carousel_Info {
+  display: flex;
+}
+
+
+
+
+
+
+
+.carousel-2_Info {
+  cursor: grab;
+  overflow: hidden;
+  /* height: 50%; */
+}
+
+.download_file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--color-blue-admin);
+    font-weight: 600;
+    width: 100%;
+}
+
+.download_file:hover {
+    color: silver;
+}
+
+.info_margin {
+    margin-bottom: 50px;
+}
+
+.wrappImagesInfo {
+    width: 50%;
+    height: 400px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.dowload {
+    color: var(--color-gray);
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.dowload img {
+    object-fit: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+#childSwiperInfo {
+    height: 95%;
+    width: 100%;
+    /* width: 600px; */
+    margin: 0 auto;
+    text-align: center;
+}
+#childSwiperInfo img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.privacyPolicyContainer h1 {
+    text-align: center;
+    color: var(--color-blue-admin);
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.privacyPolicyContainer h1:first-of-type {
+    padding-top: 10px;
+}
+
+.privacy-policy-container .container .swiper_container {
+    height: 720px;
+}
+
+.privacy-policy-container .container .swiper_container img {
+    width: 500px;
+}
